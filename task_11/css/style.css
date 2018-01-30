@@ -388,11 +388,13 @@ input {
         background: transparent;
         background-image: none;
         -webkit-appearance: none;
+        -moz-appearance: none;
         font-size: 0.8125rem;
         background: #f7f7fa;
         color: #a5abc5;
         font-weight: bold;
         cursor: pointer;
+        outline: none;
     }
 
     .select-style:before {
@@ -751,9 +753,16 @@ input {
     }
 
     input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button,
+    input[type=number]::-webkit-inner-spin-button, 
     input[type=number]::-webkit-outer-spin-button { 
         -webkit-appearance: none; 
+        -moz-appearance: none;
         margin: 0; 
+    }
+
+    input[type='number'] {
+        -moz-appearance:textfield;
     }
 
     .change::-webkit-input-placeholder {
@@ -791,7 +800,7 @@ input {
     .card_code_input input {
         border: 0.0625rem solid #c9d0e1; 
         border-radius: 0.25rem;
-        float:left;
+        float: left;
         margin-right: 1.25rem;
     }
 
