@@ -1,15 +1,34 @@
 doctype html
 html(lang="en")
-  head
-    title= pageTitle
-  body
-    h1 Pug - node template engine
-    #container.col
-      if youAreUsingPug
-        p You are amazing
-      else
-        p Get on it!
-      p.
-        Pug is a terse and simple templating language with a
-        strong focus on performance and powerful features.
-    img(src='./images/captainamerica.png')
+head
+    link(rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.4/css/all.css")
+    title Pizza order
+body
+    .container
+        .header
+            .top-time
+                time 12:12:12
+            .top-logo 
+                img(src='./images/captainamerica.png')
+            .top-right-info
+                .login
+                    p login
+        main.main
+            .pizza-container
+            .pizza-container
+            .pizza-container
+            .pizza-container
+            .pizza-container
+            .pizza-container
+            .pizza-container
+            .pizza-container
+            .pizza-container
+            .pizza-container
+            .pizza-container
+            .pizza-container
+
+        footer.footer
+            .left-info
+                p Kottans, Kottans Str.1 tel: 577-788-88
+            .right-info
+                p Pizza Manager © 2018
