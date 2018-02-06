@@ -1,3 +1,143 @@
 body {
-    background: url(image/);
+    background: url(../images/bcg.jpg) no-repeat;
+    background-size: 100%;
+    padding: 50px;
+    color: #D6D6D5;
+    font-size: 14px;
+}
+
+.main-info {
+    display: grid;
+    grid-template-columns: 2fr 7fr 19fr;
+    grid-template-areas:
+    "menu-info favorite-cities-info favorite-cities-info"
+    "menu-info city-info period-info";
+    box-shadow: 0 0 10px rgba(0,0,8,0.8);
+}
+
+.menu-info {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #32132A;
+    flex-direction: column;
+    grid-area: menu-info;
+}
+
+    .menu-link {
+        color: #D6D6D5;
+        text-align: center;
+        font-size: 20px;
+        padding: 10px 0;
+    }
+
+    .menu-link:active,
+    .menu-link:hover {
+        color: #F4FF00;
+        text-decoration: none;        
+    }
+
+.favorite-cities-info {
+    background: url(../images/city.jpg) no-repeat;
+    background-size: 100%;    
+    grid-area: favorite-cities-info;
+    padding-bottom: 30px;
+}
+
+.cities {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 20px 30px 30px;
+    
+}
+
+.city-block {
+    display: inline-flex;
+    align-items: center;
+}
+
+    .div__fav-city-info {
+        display: inline;
+    }
+
+    .fav-city-info {
+        display: inline;
+        margin-left: 15px;
+    }
+
+        .fav-city-name {
+            font-size: 16px;
+        }
+
+        .fav-city-des {
+            font-size: 10px;
+            color: #F4FF00;
+            overflow-wrap: break-word;
+        }
+
+        .fav-city-degree {
+            font-size: 25px;
+        }
+
+        .degree-size {
+            font-size: 12px;
+        }
+
+    .fav-city {
+        width: 77px;
+        height: 87px;
+        --webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    }
+
+    .active,
+    .fav-city:active {
+        width: 104px;
+        height: 114px;
+    }
+
+    .fav-city2 {
+        width: 88px;
+        height: 98px;
+    }
+
+    .input-search {
+        margin: 0px auto;   
+        display: block;     
+    }
+
+    input {
+        text-align: center;
+        padding: 20px;
+        border: none;
+        outline: none;
+        background-color: #32132A !important;
+        opacity: 0.8;
+        color: #D6D6D5;  
+        width: 700px; 
+        font-size: 17px;     
+    } 
+
+.city-info {    
+    background: url(../images/main-city.jpg) no-repeat;
+    background-size: 100%;
+    grid-area: city-info;
+    padding: 20px;
+    text-align: center;
+}
+
+    .main-city {
+        font-size: 35px;
+    }
+
+    .time {
+        font-size: 30px;
+    }
+
+
+.period-info {
+    background-color: #342135;
+    opacity: 0.9;
+    grid-area: period-info;
 }
