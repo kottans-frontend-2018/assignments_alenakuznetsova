@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/weather-icons/css/weather-icons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
     <script src="js/script.js"></script>
 </head>
 <body>
@@ -61,7 +63,7 @@
                                 </div>                                
                             </div>
                             <div class="city-block">
-                                <img src="images/pic-city3.jpg" alt="favorite-city" class="fav-city active">
+                                <img src="images/pic-city3.jpg" alt="favorite-city" class="fav-city fav-city-active">
                                 <div class="div__fav-city-info">
                                     <table class="fav-city-info">
                                         <tbody>
@@ -124,17 +126,70 @@
                         </div>
                     </div>
                     
-                    <div class="city-info">
-                        <p class="main-city">Paris,France</p>
+                    <div class="city-info">  
+                        <p class="add-favorite-city"><i class="material-icons">star_border</i></p>                      
+                        <p class="main-city">Paris, France</p>
                         <p class="time">9:30 am</p>
                         <p class="date">30 May</p>
-                        <p class="day">Thuesday</p>
+                        <p class="main-day">Monday</p>
+                        <span class="main-icon"><i class="wi wi-day-sunny"></i></span>                        
+                        <p class="main-day-degree">32 <span class="degree-size">C&deg;</span></p>
+                        <table class="tb-city-info">
+                            <tbody>
+                                <tr>
+                                    <td class="day">Tuesday</td>  
+                                    <td  class="day-degree">30-26 <i class="wi wi-day-sunny"></i></td>                                       
+                                </tr>
+                                <tr>
+                                    <td class="day">Wednesday</td>
+                                    <td  class="day-degree">30-26 <i class="wi wi-night-sleet"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="day">Thuesday</td>
+                                    <td  class="day-degree">30-26 <i class="wi wi-rain"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="day">Friday</td>
+                                    <td  class="day-degree">30-26 <i class="wi wi-day-cloudy"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="day">Saturday</td>
+                                    <td  class="day-degree">30-26 <i class="wi wi-storm-showers"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="day">Sunday</td>
+                                    <td  class="day-degree">30-26 <i class="wi wi-day-cloudy"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>                        
                     </div>
                     <div class="period-info">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Today</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">14 das</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">1 Month</a>
+                            </li>
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">Today</div>
+                            <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">14 days</div>
+                            <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">1 Month</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>    
 </body>
 </html>

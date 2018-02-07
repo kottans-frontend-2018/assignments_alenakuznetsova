@@ -1,8 +1,10 @@
 body {
     background: url(../images/bcg.jpg) no-repeat;
-    background-size: 100%;
+    background-size: cover; 
     padding: 50px;
-    color: #D6D6D5;
+    color: #D1CECA;
+    font-family: 'Muli', sans-serif;
+    font-weight: 100;
     font-size: 14px;
 }
 
@@ -91,7 +93,7 @@ body {
         clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     }
 
-    .active,
+    .fav-city-active,
     .fav-city:active {
         width: 104px;
         height: 114px;
@@ -119,14 +121,27 @@ body {
         font-size: 17px;     
     } 
 
-.city-info {    
-    background: url(../images/main-city.jpg) no-repeat;
-    background-size: 100%;
+.city-info {   
+    background-size: cover;
+    background-image: url(../images/main-city.jpg), linear-gradient(45deg, #32132A, #863432);
+    background-blend-mode: darken;
+    
     grid-area: city-info;
     padding: 20px;
     text-align: center;
 }
 
+.city-info p {
+    line-height: 0.9;
+}
+
+.tb-city-info {
+    margin: auto;
+}
+
+    .add-favorite-city {
+        color: #F4FF00;
+    }
     .main-city {
         font-size: 35px;
     }
@@ -135,9 +150,58 @@ body {
         font-size: 30px;
     }
 
+    .date {
+        font-size: 19px;
+    }
+
+    .main-day {
+        color: #D10B42;
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .main-icon {
+        font-size: 64px;
+        font-weight: 200;
+    }
+
+    .main-day-degree {
+        font-size: 26px;
+    }
+
+    .day {
+        color: #D10B42;
+        font-size: 20px;
+        text-align: right;
+    }
+    
+        .day-degree {
+            color: #958785;
+            text-align: left;
+            font-size: 15px;
+            padding-left: 20px;
+            /* vertical-align: middle; */
+        }
+        
 
 .period-info {
     background-color: #342135;
     opacity: 0.9;
     grid-area: period-info;
 }
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #D1CECA;;
+    background-color: #342135;
+}
+
+.nav-link,
+.nav-link:hover {
+    color: #D1CECA;
+}
+
+.nav-tabs {
+    font-size: 20px;
+    color: #D1CECA;;
+    background-color: #342135;
+} 
