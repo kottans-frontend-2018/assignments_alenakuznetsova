@@ -41,9 +41,11 @@ body {
 
 .favorite-cities-info {
     background: url(../images/city.jpg) no-repeat;
+    
     background-size: 100%;    
     grid-area: favorite-cities-info;
     padding-bottom: 30px;
+    color: #FFFFFD;
 }
 
 .cities {
@@ -69,21 +71,49 @@ body {
     }
 
         .fav-city-name {
-            font-size: 16px;
+            font-size: 17px;
+        }
+        .fav-city-name2 {
+            font-size: 18px;
+        }
+        .fav-city-name3 {
+            font-size: 19px;
         }
 
-        .fav-city-des {
-            font-size: 10px;
+        .fav-city-des,
+        .fav-city-des2,
+        .fav-city-des3 {
             color: #F4FF00;
-            overflow-wrap: break-word;
         }
-
+        
+        .fav-city-des {
+            font-size: 10px;            
+        }
+        .fav-city-des2 {
+            font-size: 11px;
+        }
+        .fav-city-des3 {
+            font-size: 12px;
+        }
+        
         .fav-city-degree {
             font-size: 25px;
         }
+        .fav-city-degree2 {
+            font-size: 27px;
+        }
+        .fav-city-degree3 {
+            font-size: 32px;
+        }
 
         .degree-size {
-            font-size: 12px;
+            font-size: 13px;
+        }
+        .degree-size2 {
+            font-size: 15px;
+        }
+        .degree-size3 {
+            font-size: 17px;
         }
 
     .fav-city {
@@ -93,16 +123,16 @@ body {
         clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     }
 
-    .fav-city-active,
-    .fav-city:active {
-        width: 104px;
-        height: 114px;
-    }
-
     .fav-city2 {
         width: 88px;
         height: 98px;
     }
+
+    .fav-city-active,
+    .fav-city:active {
+        width: 104px;
+        height: 114px;
+    }       
 
     .input-search {
         margin: 0px auto;   
