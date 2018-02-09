@@ -1,8 +1,5 @@
-var ClientSecret = '578b6c8776485de72091d97bbfb0c84c043b272d';
-var ClientID = 'dj0yJmk9S1hYMHV4dWQ4YUxGJmQ9WVdrOWJXOWlZazlvTnpnbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD0wNg--';
-
-function getCity() {
-    let city = "poltava";
+function getCityInfo() {
+    let city = document.getElementById("input_search").value;
     let deg = "celsius";
 
     let url = "https://query.yahooapis.com/v1/public/yql?q=",
@@ -13,15 +10,53 @@ function getCity() {
 return url + query + getCityWoeid + setDegree + format;
 }
 
+function printCityInfo (obj) {
+    document.getElementById('curent-city').innerHTML = obj.query.results.channel.location.city +', '+ obj.query.results.channel.location.country;
+    // document.getElementById('curent-day').innerHTML = obj.query.results.channel.item.forecast[0].day;
+    // document.getElementById('curent-time').innerHTML = obj.query.results;
+    let curentDay = obj.query.results.channel.item.forecast[0].day;
+    let cur_day = returnFullNameDay(curentDay);
+    document.getElementById('curent-day').innerHTML = cur_day;
+}
+
+function returnFullNameDay(shortName) {
+    switch(shortName) {
+        case 'Mon':  
+            return 'Monday';
+            break;      
+        case 'Tue':
+            return 'Tuesday';
+            break;
+        case 'Wed':
+            return 'Wednesday';
+            break;
+        case 'Thu':
+            return 'Thursday';
+            break;
+        case 'Fri':
+            return 'Friday';
+            break;
+        case 'Sat':
+            return 'Saturday';
+            break;
+        case 'Sun':
+            return 'Sunday';
+            break;
+        default:
+            return 'Could not find a week day'
+          break;      
+    }
+}
+
 function showRepositiries () {     
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", getCity(), true);                
+    xhr.open("GET", getCityInfo(), true);                
     
     xhr.onreadystatechange = function(e) {
         var data_json = this.responseText;
         var obj = JSON.parse(data_json);                    
         if (this.readyState == 4 && this.status == 200) {       
-            document.getElementById('curent-city').innerHTML = obj.query.results.channel.location.city +', '+ obj.query.results.channel.location.country;
+            printCityInfo (obj);       
         } else { 
             console.log(xhr.responseText);
         }      
@@ -29,18 +64,12 @@ function showRepositiries () {
     xhr.send();                         
 }
 
-showRepositiries();
-
 document.onkeyup = function (e) {
 	e = e || window.event;
-	if (e.keyCode === 13) {
-        getValue();
-	}
-	return false;
+	if ( e.keyCode === 13 ) {
+        getCityInfo();
+        showRepositiries();
+	} else  { 
+        return false;
+    }
 }
-
-
-function getValue(){
-    var current_city = document.getElementById("input_search").value;
-    return current_city;
-  }
