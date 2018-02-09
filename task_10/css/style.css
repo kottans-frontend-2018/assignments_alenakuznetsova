@@ -178,6 +178,7 @@ body {
 
     .time {
         font-size: 30px;
+        text-transform: lowercase;
     }
 
     .date {

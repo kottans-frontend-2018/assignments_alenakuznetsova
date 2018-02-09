@@ -12,8 +12,9 @@ return url + query + getCityWoeid + setDegree + format;
 
 function printCityInfo (obj) {
     document.getElementById('curent-city').innerHTML = obj.query.results.channel.location.city +', '+ obj.query.results.channel.location.country;
-    document.getElementById('curent-date').innerHTML = obj.query.results.channel.item.forecast[0].date;
     document.getElementById('curent-day').innerHTML = returnFullNameDay(obj.query.results.channel.item.forecast[0].day);
+    document.getElementById('curent-date').innerHTML = obj.query.results.channel.item.forecast[0].date;
+    document.getElementById('curent-time').innerHTML = obj.query.results.channel.lastBuildDate.substring(16,25);
     document.getElementById('current-degree').innerHTML = obj.query.results.channel.item.condition.temp + ' <span class="degree-size">C&deg;</span>';
     document.getElementById('main-icon').classList.add(printWeatherIcon(obj.query.results.channel.item.condition.code));
 
