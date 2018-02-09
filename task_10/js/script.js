@@ -12,11 +12,13 @@ return url + query + getCityWoeid + setDegree + format;
 
 function printCityInfo (obj) {
     document.getElementById('curent-city').innerHTML = obj.query.results.channel.location.city +', '+ obj.query.results.channel.location.country;
-    // document.getElementById('curent-day').innerHTML = obj.query.results.channel.item.forecast[0].day;
-    // document.getElementById('curent-time').innerHTML = obj.query.results;
-    let curentDay = obj.query.results.channel.item.forecast[0].day;
-    let cur_day = returnFullNameDay(curentDay);
-    document.getElementById('curent-day').innerHTML = cur_day;
+    document.getElementById('curent-day').innerHTML = returnFullNameDay(obj.query.results.channel.item.forecast[0].day);
+    document.getElementById('day-2').innerHTML = returnFullNameDay(obj.query.results.channel.item.forecast[1].day);
+    document.getElementById('day-3').innerHTML = returnFullNameDay(obj.query.results.channel.item.forecast[2].day);
+    document.getElementById('day-4').innerHTML = returnFullNameDay(obj.query.results.channel.item.forecast[3].day);
+    document.getElementById('day-5').innerHTML = returnFullNameDay(obj.query.results.channel.item.forecast[4].day);
+    document.getElementById('day-6').innerHTML = returnFullNameDay(obj.query.results.channel.item.forecast[5].day);
+    document.getElementById('day-7').innerHTML = returnFullNameDay(obj.query.results.channel.item.forecast[6].day);
 }
 
 function returnFullNameDay(shortName) {
