@@ -120,7 +120,7 @@
                         <div class="row justify-content-md-center">
                             <div class="col-md-auto">
                                 <div class="input-search center">
-                                    <input type="search" name="search" placeholder="Search city"> 
+                                    <input id="input_search" type="search" name="search" placeholder="Search city"> 
                                 </div>
                             </div>
                         </div>
@@ -128,7 +128,7 @@
                     
                     <div class="city-info">  
                         <p class="add-favorite-city"><i class="material-icons">star_border</i></p>                      
-                        <p class="main-city">Paris, France</p>
+                        <p class="main-city" id="curent-city"></p>
                         <p class="time">9:30 am</p>
                         <p class="date">30 May</p>
                         <p class="main-day">Monday</p>
@@ -170,18 +170,14 @@
                                 <a class="nav-link active" id="today-tab" data-toggle="tab" href="#today" role="tab" aria-controls="today" aria-selected="true">Today</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">14 das</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">1 Month</a>
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">14 days</a>
                             </li>
                         </ul>
 
                         <!-- Tab panes -->
                         <div class="tab-content">
                             <div class="tab-pane active" id="today" role="tabpanel" aria-labelledby="today-tab">Today</div>
-                            <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">14 days</div>
-                            <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">1 Month</div>
+                            <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">5 days</div>
                         </div>
                     </div>
                 </div>
