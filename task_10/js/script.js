@@ -25,7 +25,7 @@ function printCityInfo (obj) {
         '<p class="date" id="curent-date">' + curDate +'</p>' +
         '<p class="main-day" id="curent-day">' + curDay + '</p>' +
         '<span class="main-icon"><i id="main-icon" class="wi ' + curIcon + '"></i></span>' +
-        '<p class="main-day-degree" id="current-degree">' + curDegree + ' <span class="degree-size">C&deg;</span>' +'</p>';        
+        '<p class="main-day-degree" id="current-degree">' + curDegree + ' <span class="degree-size">C&deg;</span>' + '</p>';        
         
         function showForecstOnSomeDays(days) {
             let daysStr = " ";
@@ -37,8 +37,8 @@ function printCityInfo (obj) {
                 daysStr  += 
                 '<tr>' +
                     '<td class="day">' + day + '</td>' +                                       
-                    '<td class="day-degree">' + highDegree + '</td>' +
-                    '<td class="day-degree">' + lowDegree + '</td>' +
+                    '<td class="day-degree">' + highDegree + '<span class="degree-size"> C&deg;</span></td>' +
+                    '<td class="day-degree">' + lowDegree + '<span class="degree-size"> C&deg;</span></td>' +
                     '<td class="day-degree"><i class="wi ' + curIcon + '"></i></td>' +
                 '</tr>';            
             }
