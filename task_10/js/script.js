@@ -11,13 +11,22 @@ return url + query + getCityWoeid + setDegree + format;
 }
 
 function printCityInfo (obj) {
-    document.getElementById('curent-city').innerHTML = obj.query.results.channel.location.city +', '+ obj.query.results.channel.location.country;
-    document.getElementById('curent-day').innerHTML = returnFullNameDay(obj.query.results.channel.item.forecast[0].day);
-    document.getElementById('curent-date').innerHTML = obj.query.results.channel.item.forecast[0].date;
-    document.getElementById('curent-time').innerHTML = obj.query.results.channel.lastBuildDate.substring(16,25);
-    document.getElementById('current-degree').innerHTML = obj.query.results.channel.item.condition.temp + ' <span class="degree-size">C&deg;</span>';
-    document.getElementById('main-icon').classList.add(printWeatherIcon(obj.query.results.channel.item.condition.code));
+    let curCity = obj.query.results.channel.location.city +', '+ obj.query.results.channel.location.country;
+    let curTime = obj.query.results.channel.lastBuildDate.substring(16,25);
+    let curDate = obj.query.results.channel.item.forecast[0].date;
+    let curDay = returnFullNameDay(obj.query.results.channel.item.forecast[0].day);
+    let curIcon = printWeatherIcon(obj.query.results.channel.item.condition.code);
+    let curDegree = obj.query.results.channel.item.condition.temp;
 
+    document.getElementById('current-city-info').innerHTML = 
+        '<p class="add-favorite-city"><i class="material-icons">star_border</i></p>' +
+        '<p class="main-city" id="curent-city">' + curCity + '</p>' +                    
+        '<p class="time" id="curent-time">'  + curTime + '</p>' +             
+        '<p class="date" id="curent-date">' + curDate +'</p>' +
+        '<p class="main-day" id="curent-day">' + curDay + '</p>' +
+        '<span class="main-icon"><i id="main-icon" class="wi ' + curIcon + '"></i></span>' +                       
+       
+    
     document.getElementById('day-2').innerHTML = returnFullNameDay(obj.query.results.channel.item.forecast[1].day);
     document.getElementById('high-deg-day2').innerHTML = obj.query.results.channel.item.forecast[1].high;
     document.getElementById('low-deg-day2').innerHTML = obj.query.results.channel.item.forecast[1].low;
@@ -47,6 +56,18 @@ function printCityInfo (obj) {
     document.getElementById('high-deg-day7').innerHTML = obj.query.results.channel.item.forecast[6].high;
     document.getElementById('low-deg-day7').innerHTML = obj.query.results.channel.item.forecast[6].low;
     document.getElementById('icon-day7').classList.add(printWeatherIcon(obj.query.results.channel.item.condition.code));
+
+    document.getElementById('day-8').innerHTML = returnFullNameDay(obj.query.results.channel.item.forecast[7].day);
+    document.getElementById('high-deg-day8').innerHTML = obj.query.results.channel.item.forecast[7].high;
+    document.getElementById('low-deg-day8').innerHTML = obj.query.results.channel.item.forecast[7].low;
+    document.getElementById('icon-day8').classList.add(printWeatherIcon(obj.query.results.channel.item.condition.code));
+
+    document.getElementById('day-9').innerHTML = returnFullNameDay(obj.query.results.channel.item.forecast[8].day);
+    document.getElementById('high-deg-day9').innerHTML = obj.query.results.channel.item.forecast[8].high;
+    document.getElementById('low-deg-day9').innerHTML = obj.query.results.channel.item.forecast[8].low;
+    document.getElementById('icon-day9').classList.add(printWeatherIcon(obj.query.results.channel.item.condition.code));
+
+
 }
 
 function returnFullNameDay(shortName) {
