@@ -1,7 +1,32 @@
 
 let favCityArr = [];
+getSaveData();
 
+document.onkeyup = function (e) {
+	e = e || window.event;
+	if ( e.keyCode === 13 ) {
+        getCityInfo();
+        showRepositiries();
+	} else  { 
+        return false;
+    }
+}
 
+function showRepositiries () {     
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", getCityInfo(), true);                
+    
+    xhr.onreadystatechange = function(e) {
+        let data_json = this.responseText;
+        let obj = JSON.parse(data_json);                    
+        if (this.readyState == 4 && this.status == 200) {       
+            printCitiesInfo (obj);       
+        } else { 
+            console.log(xhr.responseText);
+        }      
+    } 
+    xhr.send();                         
+}
 
 function getCityInfo() {
     let city = document.getElementById("input_search").value;
@@ -22,24 +47,34 @@ function addFavoriteCity() {
     if (star.textContent == 'star_border') {
         star.textContent = 'star';
         favCityArr.push(city);
+
+        saveData();
     } else {
         star.textContent = 'star_border';
         favCityArr.pop();
+        saveData();
     }
     console.log(favCityArr);    
 }
 
-document.onkeyup = function (e) {
-	e = e || window.event;
-	if ( e.keyCode === 13 ) {
-        getCityInfo();
-        showRepositiries();
-	} else  { 
-        return false;
-    }
+function saveData() {
+    var str = JSON.stringify(favCityArr);  
+    localStorage.setItem('favCityArr', str);
 }
 
-function printCityInfo (obj) {
+function getSaveData() {
+    var str = localStorage.getItem('favCityArr');
+    favCityArr = JSON.parse(str);
+    if (!favCityArr) {
+        favCityArr = [];
+    }
+
+    // for(i in favCityArr) {
+    //     addFavoriteCity(favCityArr[i]);
+    // }    
+}
+
+function printCitiesInfo (obj) {
     let curCity = obj.query.results.channel.location.city +', '+ obj.query.results.channel.location.country;
     let curTime = obj.query.results.channel.lastBuildDate.substring(16,25);
     let curDate = obj.query.results.channel.item.forecast[0].date;
@@ -261,20 +296,4 @@ function printWeatherIcon(weatherCode) {
         break;
     }
     return icon;
-}
-
-function showRepositiries () {     
-    let xhr = new XMLHttpRequest();
-    xhr.open("GET", getCityInfo(), true);                
-    
-    xhr.onreadystatechange = function(e) {
-        let data_json = this.responseText;
-        let obj = JSON.parse(data_json);                    
-        if (this.readyState == 4 && this.status == 200) {       
-            printCityInfo (obj);       
-        } else { 
-            console.log(xhr.responseText);
-        }      
-    } 
-    xhr.send();                         
 }
