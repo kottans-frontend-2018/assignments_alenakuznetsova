@@ -1,3 +1,8 @@
+
+let favCityArr = [];
+
+
+
 function getCityInfo() {
     let city = document.getElementById("input_search").value;
     let deg = "celsius";
@@ -10,6 +15,30 @@ function getCityInfo() {
 return url + query + getCityWoeid + setDegree + format;
 }
 
+function addFavoriteCity() {
+    let star = document.getElementById('favorite-star');
+    let city = document.getElementById("input_search").value;
+
+    if (star.textContent == 'star_border') {
+        star.textContent = 'star';
+        favCityArr.push(city);
+    } else {
+        star.textContent = 'star_border';
+        favCityArr.pop();
+    }
+    console.log(favCityArr);    
+}
+
+document.onkeyup = function (e) {
+	e = e || window.event;
+	if ( e.keyCode === 13 ) {
+        getCityInfo();
+        showRepositiries();
+	} else  { 
+        return false;
+    }
+}
+
 function printCityInfo (obj) {
     let curCity = obj.query.results.channel.location.city +', '+ obj.query.results.channel.location.country;
     let curTime = obj.query.results.channel.lastBuildDate.substring(16,25);
@@ -19,7 +48,7 @@ function printCityInfo (obj) {
     let curDegree = obj.query.results.channel.item.condition.temp;
 
     document.getElementById('current-city-info').innerHTML = 
-        '<p class="add-favorite-city"><i class="material-icons">star_border</i></p>' +
+        '<a href="#" class="add-favorite-city" onclick=addFavoriteCity()><i id="favorite-star" class="material-icons">star_border</i></a>' +
         '<p class="main-city" id="curent-city">' + curCity + '</p>' +                    
         '<p class="time" id="curent-time">'  + curTime + '</p>' +             
         '<p class="date" id="curent-date">' + curDate +'</p>' +
@@ -27,25 +56,25 @@ function printCityInfo (obj) {
         '<span class="main-icon"><i id="main-icon" class="wi ' + curIcon + '"></i></span>' +
         '<p class="main-day-degree" id="current-degree">' + curDegree + ' <span class="degree-size">C&deg;</span>' + '</p>';        
         
-        function showForecstOnSomeDays(days) {
-            let daysStr = " ";
-            for (let i = 0; i < days; i++) {            
-                let lowDegree = obj.query.results.channel.item.forecast[i].low;
-                let highDegree = obj.query.results.channel.item.forecast[i].high;
-                let day = returnFullNameDay(obj.query.results.channel.item.forecast[i].day);            
+    function showForecstOnSomeDays(days) {
+        let daysStr = " ";
+        for (let i = 0; i < days; i++) {            
+            let lowDegree = obj.query.results.channel.item.forecast[i].low;
+            let highDegree = obj.query.results.channel.item.forecast[i].high;
+            let day = returnFullNameDay(obj.query.results.channel.item.forecast[i].day);            
 
-                daysStr  += 
-                '<tr>' +
-                    '<td class="day">' + day + '</td>' +                                       
-                    '<td class="day-degree">' + highDegree + '<span class="degree-size"> C&deg;</span></td>' +
-                    '<td class="day-degree">' + lowDegree + '<span class="degree-size"> C&deg;</span></td>' +
-                    '<td class="day-degree"><i class="wi ' + curIcon + '"></i></td>' +
-                '</tr>';            
-            }
-            document.getElementById('tb-cities' + days +'-info').innerHTML = daysStr;
-        } 
-     showForecstOnSomeDays(3);
-     showForecstOnSomeDays(10);        
+            daysStr  += 
+            '<tr>' +
+                '<td class="day">' + day + '</td>' +                                       
+                '<td class="day-degree">' + highDegree + '<span class="degree-size"> C&deg;</span></td>' +
+                '<td class="day-degree">' + lowDegree + '<span class="degree-size"> C&deg;</span></td>' +
+                '<td class="day-degree"><i class="wi ' + curIcon + '"></i></td>' +
+            '</tr>';            
+        }
+        document.getElementById('tb-cities' + days +'-info').innerHTML = daysStr;
+    } 
+    showForecstOnSomeDays(3);
+    showForecstOnSomeDays(10);        
 }
 
 function returnFullNameDay(shortName) {
@@ -78,7 +107,7 @@ function returnFullNameDay(shortName) {
 }
 
 function printWeatherIcon(weatherCode) {
-    var icon = "";
+    let icon = "";
     switch (weatherCode) {
         case "0":
             icon = "wi-tornado";
@@ -234,14 +263,13 @@ function printWeatherIcon(weatherCode) {
     return icon;
 }
 
-
 function showRepositiries () {     
-    var xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
     xhr.open("GET", getCityInfo(), true);                
     
     xhr.onreadystatechange = function(e) {
-        var data_json = this.responseText;
-        var obj = JSON.parse(data_json);                    
+        let data_json = this.responseText;
+        let obj = JSON.parse(data_json);                    
         if (this.readyState == 4 && this.status == 200) {       
             printCityInfo (obj);       
         } else { 
@@ -249,14 +277,4 @@ function showRepositiries () {
         }      
     } 
     xhr.send();                         
-}
-
-document.onkeyup = function (e) {
-	e = e || window.event;
-	if ( e.keyCode === 13 ) {
-        getCityInfo();
-        showRepositiries();
-	} else  { 
-        return false;
-    }
 }

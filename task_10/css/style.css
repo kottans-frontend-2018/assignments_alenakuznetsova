@@ -168,9 +168,12 @@ body {
     margin: 20px auto;
 }
 
-    .add-favorite-city {
+    .add-favorite-city,
+    .add-favorite-city:hover,
+    .add-favorite-city:active {
         color: #F4FF00;
     }
+    
     .main-city {
         font-size: 35px;
     }
