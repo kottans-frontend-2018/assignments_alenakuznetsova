@@ -2,19 +2,22 @@
 let favCityArr = [];
 getSaveData();
 
+// showFavoriteCities();
+
 document.onkeyup = function (e) {
 	e = e || window.event;
 	if ( e.keyCode === 13 ) {
-        getCityInfo();
-        showRepositiries();
+        let city = document.getElementById("input_search").value;
+            getCityInfo(city);
+        showRepositiries( getCityInfo(city) );
 	} else  { 
         return false;
     }
 }
 
-function showRepositiries () {     
+function showRepositiries (link) {     
     let xhr = new XMLHttpRequest();
-    xhr.open("GET", getCityInfo(), true);                
+    xhr.open("GET", link, true);                
     
     xhr.onreadystatechange = function(e) {
         let data_json = this.responseText;
@@ -28,10 +31,8 @@ function showRepositiries () {
     xhr.send();                         
 }
 
-function getCityInfo() {
-    let city = document.getElementById("input_search").value;
+function getCityInfo(city) {    
     let deg = "celsius";
-
     let url = "https://query.yahooapis.com/v1/public/yql?q=",
     query = "select * from weather.forecast where woeid in ",
     getCityWoeid = '(select woeid from geo.places(1) where text="'+ city +'")',
@@ -47,7 +48,6 @@ function addFavoriteCity() {
     if (star.textContent == 'star_border') {
         star.textContent = 'star';
         favCityArr.push(city);
-
         saveData();
     } else {
         star.textContent = 'star_border';
@@ -67,11 +67,7 @@ function getSaveData() {
     favCityArr = JSON.parse(str);
     if (!favCityArr) {
         favCityArr = [];
-    }
-
-    // for(i in favCityArr) {
-    //     addFavoriteCity(favCityArr[i]);
-    // }    
+    }   
 }
 
 function printCitiesInfo (obj) {
@@ -82,6 +78,33 @@ function printCitiesInfo (obj) {
     let curIcon = printWeatherIcon(obj.query.results.channel.item.condition.code);
     let curDegree = obj.query.results.channel.item.condition.temp;
 
+    function showFavoriteCities() {
+        document.getElementById('current-city-info').innerHTML = 
+            
+        console.log(favCityArr);
+
+        for (let i = 0; i < favCityArr.length; i++) {  
+            daysStr  += 
+            '<div class="city-block">' +
+            '<img src="images/pic-city' + i +'.jpg" alt="favorite-city" class="fav-city">' +                    
+            '<div class="div__fav-city-info">' +
+            '<table class="fav-city-info">' +
+            '<tbody><tr><td><span class="fav-city-name">' + favCityArr[0] + '</span></td>' +
+            '</tr><tr><td><span class="fav-city-des">Sunny</span></td></tr><tr>' +
+            '<td><span class="fav-city-degree">32 <span class="degree-size">C &deg;</span></td>' +
+            '</tr></tbody></table></div></div>';
+            '<tr>' +
+                '<td class="day">' + day + '</td>' +                                       
+                '<td class="day-degree">' + highDegree + '<span class="degree-size"> C&deg;</span></td>' +
+                '<td class="day-degree">' + lowDegree + '<span class="degree-size"> C&deg;</span></td>' +
+                '<td class="day-degree"><i class="wi ' + curIcon + '"></i></td>' +
+            '</tr>';            
+        }
+        document.getElementById('tb-cities' + days +'-info').innerHTML = daysStr;
+    }
+
+    
+
     document.getElementById('current-city-info').innerHTML = 
         '<a href="#" class="add-favorite-city" onclick=addFavoriteCity()><i id="favorite-star" class="material-icons">star_border</i></a>' +
         '<p class="main-city" id="curent-city">' + curCity + '</p>' +                    
@@ -91,7 +114,7 @@ function printCitiesInfo (obj) {
         '<span class="main-icon"><i id="main-icon" class="wi ' + curIcon + '"></i></span>' +
         '<p class="main-day-degree" id="current-degree">' + curDegree + ' <span class="degree-size">C&deg;</span>' + '</p>';        
         
-    function showForecstOnSomeDays(days) {
+   function showForecstOnSomeDays(days) {
         let daysStr = " ";
         for (let i = 0; i < days; i++) {            
             let lowDegree = obj.query.results.channel.item.forecast[i].low;
