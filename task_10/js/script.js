@@ -2,28 +2,30 @@
 let favCityArr = [];
 getSaveData();
 
-// showFavoriteCities();
-
 document.onkeyup = function (e) {
 	e = e || window.event;
 	if ( e.keyCode === 13 ) {
-        let city = document.getElementById("input_search").value;
-            getCityInfo(city);
-        showRepositiries( getCityInfo(city) );
+        let curCity = document.getElementById("input_search").value;
+        showRepositiries( getCityInfo(curCity), printCitiesInfo);
+
+
+
+        let city = favCityArr[1];
+        showRepositiries (getCityInfo(city), showFavoriteCities);
 	} else  { 
         return false;
     }
 }
 
-function showRepositiries (link) {     
+function showRepositiries (link, func) {     
     let xhr = new XMLHttpRequest();
     xhr.open("GET", link, true);                
     
-    xhr.onreadystatechange = function(e) {
-        let data_json = this.responseText;
-        let obj = JSON.parse(data_json);                    
-        if (this.readyState == 4 && this.status == 200) {       
-            printCitiesInfo (obj);       
+    xhr.onreadystatechange = function(e) {                            
+        if (this.readyState == 4 && this.status == 200) { 
+            let data_json = this.responseText;
+            let object = JSON.parse(data_json);
+            func (object);      
         } else { 
             console.log(xhr.responseText);
         }      
@@ -70,40 +72,33 @@ function getSaveData() {
     }   
 }
 
+ function showFavoriteCities (obj) {
+        let curCity = obj.query.results.channel.location.city;
+        let curDegree = obj.query.results.channel.item.condition.temp;
+        let descrip = obj.query.results.channel.item.condition.text;
+    // for (let i = 0; i < favCityArr.length; i++) {   
+    //     let city = favCityArr[i];
+    //     showRepositiries( getCityInfo(city) );
+   
+        document.getElementById('favorite-cities-info').innerHTML  = 
+        '<div class="city-block">' +
+        '<img src="images/pic-city' + 1 +'.jpg" alt="favorite-city" class="fav-city">' +                    
+        '<div class="div__fav-city-info">' +
+        '<table class="fav-city-info">' +
+        '<tbody><tr><td><span class="fav-city-name">' + curCity + '</span></td>' +
+        '</tr><tr><td><span class="fav-city-des">' + descrip + '</span></td></tr><tr>' +
+        '<td><span class="fav-city-degree">' + curDegree + '<span class="degree-size">C &deg;</span></td>' +
+        '</tr></tbody></table></div></div>';           
+    // }
+}
+
 function printCitiesInfo (obj) {
     let curCity = obj.query.results.channel.location.city +', '+ obj.query.results.channel.location.country;
     let curTime = obj.query.results.channel.lastBuildDate.substring(16,25);
     let curDate = obj.query.results.channel.item.forecast[0].date;
     let curDay = returnFullNameDay(obj.query.results.channel.item.forecast[0].day);
     let curIcon = printWeatherIcon(obj.query.results.channel.item.condition.code);
-    let curDegree = obj.query.results.channel.item.condition.temp;
-
-    function showFavoriteCities() {
-        document.getElementById('current-city-info').innerHTML = 
-            
-        console.log(favCityArr);
-
-        for (let i = 0; i < favCityArr.length; i++) {  
-            daysStr  += 
-            '<div class="city-block">' +
-            '<img src="images/pic-city' + i +'.jpg" alt="favorite-city" class="fav-city">' +                    
-            '<div class="div__fav-city-info">' +
-            '<table class="fav-city-info">' +
-            '<tbody><tr><td><span class="fav-city-name">' + favCityArr[0] + '</span></td>' +
-            '</tr><tr><td><span class="fav-city-des">Sunny</span></td></tr><tr>' +
-            '<td><span class="fav-city-degree">32 <span class="degree-size">C &deg;</span></td>' +
-            '</tr></tbody></table></div></div>';
-            '<tr>' +
-                '<td class="day">' + day + '</td>' +                                       
-                '<td class="day-degree">' + highDegree + '<span class="degree-size"> C&deg;</span></td>' +
-                '<td class="day-degree">' + lowDegree + '<span class="degree-size"> C&deg;</span></td>' +
-                '<td class="day-degree"><i class="wi ' + curIcon + '"></i></td>' +
-            '</tr>';            
-        }
-        document.getElementById('tb-cities' + days +'-info').innerHTML = daysStr;
-    }
-
-    
+    let curDegree = obj.query.results.channel.item.condition.temp;  
 
     document.getElementById('current-city-info').innerHTML = 
         '<a href="#" class="add-favorite-city" onclick=addFavoriteCity()><i id="favorite-star" class="material-icons">star_border</i></a>' +
@@ -114,25 +109,28 @@ function printCitiesInfo (obj) {
         '<span class="main-icon"><i id="main-icon" class="wi ' + curIcon + '"></i></span>' +
         '<p class="main-day-degree" id="current-degree">' + curDegree + ' <span class="degree-size">C&deg;</span>' + '</p>';        
         
+   showForecstOnSomeDays(3);
+   showForecstOnSomeDays(10);     
+   
    function showForecstOnSomeDays(days) {
         let daysStr = " ";
         for (let i = 0; i < days; i++) {            
             let lowDegree = obj.query.results.channel.item.forecast[i].low;
             let highDegree = obj.query.results.channel.item.forecast[i].high;
-            let day = returnFullNameDay(obj.query.results.channel.item.forecast[i].day);            
+            let day = returnFullNameDay(obj.query.results.channel.item.forecast[i].day);  
+            let icon = printWeatherIcon(obj.query.results.channel.item.forecast[i].code);          
 
             daysStr  += 
             '<tr>' +
                 '<td class="day">' + day + '</td>' +                                       
                 '<td class="day-degree">' + highDegree + '<span class="degree-size"> C&deg;</span></td>' +
                 '<td class="day-degree">' + lowDegree + '<span class="degree-size"> C&deg;</span></td>' +
-                '<td class="day-degree"><i class="wi ' + curIcon + '"></i></td>' +
+                '<td class="day-degree"><i class="wi ' + icon + '"></i></td>' +
             '</tr>';            
         }
         document.getElementById('tb-cities' + days +'-info').innerHTML = daysStr;
-    } 
-    showForecstOnSomeDays(3);
-    showForecstOnSomeDays(10);        
+    }       
+    showFavoriteCities ();      
 }
 
 function returnFullNameDay(shortName) {

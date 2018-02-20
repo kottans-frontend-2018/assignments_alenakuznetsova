@@ -2,6 +2,12 @@ const path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 var webpack = require('webpack');
+const imagemin = require('imagemin');
+const imageminPngquant = require('imagemin-pngquant');
+
+imagemin(['images/*.png'], 'build/images', {use: [imageminPngquant()]}).then(() => {
+	console.log('Images optimized');
+});
 
 const extractSass = new ExtractTextPlugin({
     filename: "app.sass",
@@ -26,7 +32,7 @@ module.exports = {
         loader: 'pug-loader',
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/,
+        test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
           'file-loader?name=images/[name].[ext]',
           'image-webpack-loader'    
