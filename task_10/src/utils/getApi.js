@@ -1,4 +1,4 @@
-export { getCityInfo, showRepositiries };
+export { getCityInfo, getObject };
 
 function getCityInfo(city) {    
     let deg = "celsius";
@@ -10,18 +10,17 @@ function getCityInfo(city) {
 return url + query + getCityWoeid + setDegree + format;
 }
 
-function showRepositiries (link, func) {     
+function getObject (link, callback) {    
     let xhr = new XMLHttpRequest();
     xhr.open("GET", link, true);                
     
     xhr.onreadystatechange = function(e) {                            
         if (this.readyState == 4 && this.status == 200) { 
             let data_json = this.responseText;
-            let object = JSON.parse(data_json);
-            func (object);      
-        } else { 
-            console.log(xhr.responseText);
-        }      
+            let obj = JSON.parse(data_json);
+            callback(obj);
+        }       
     } 
-    xhr.send();                         
+    xhr.send();
+                             
 }

@@ -1,7 +1,7 @@
 export default showForecstOnSomeDays;
 import printWeatherIcon from '../utils/printWeatherIcon.js';
 import returnFullNameDay from '../utils/returnFullNameDay.js';
-import printCitiesInfo from '../app.js';
+import printCitiesInfo from '../components/locationSearch.js';
 
 function showForecstOnSomeDays(obj, days) {
     let daysStr = " ";
