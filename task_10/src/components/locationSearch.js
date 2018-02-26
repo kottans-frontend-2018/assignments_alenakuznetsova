@@ -1,31 +1,41 @@
-import returnFullNameDay from '../utils/returnFullNameDay.js';
-import printWeatherIcon from '../utils/printWeatherIcon.js';
-import showForecstOnSomeDays from '../components/showForecstOnSomeDays.js';
-
-export default printCitiesInfo;
-
 class LocationSearch {
-    constructor() {
-        
+  constructor() {
+    this.state = {
+      isValid: true,
+    };
+
+    // bindAll(this, 'handleSubmit');
+
+
+    this.host = document.createElement('div');
+    this.host.classList.add('input-search center');
+
+    this.host.addEventListener('submit', this.handleSubmit);
+  }
+
+  updateState(nextState) {
+    this.state = nextState;
+    this.render();
+  }
+
+  handleSubmit(ev) {
+    ev.preventDefault();
+
+    const city = ev.target.elements.search.value.trim();
+
+    if (!city.length) {
+      this.updateState({ isValid: false });
     }
+  }
+
+  render() {
+    const { isValid } = this.state;
+
+    this.host.innerHTML = 
+      '<input id="input_search" type="search" name="search" placeholder="Search city">';
+
+    return this.host;
+  }
 }
 
-function printCitiesInfo (obj) {
-    let curCity = obj.query.results.channel.location.city +', '+ obj.query.results.channel.location.country;
-    let curTime = obj.query.results.channel.lastBuildDate.substring(16,25);
-    let curDate = obj.query.results.channel.item.forecast[0].date;
-    let curDay = returnFullNameDay(obj.query.results.channel.item.forecast[0].day);
-    let curIcon = printWeatherIcon(obj.query.results.channel.item.condition.code);
-    let curDegree = obj.query.results.channel.item.condition.temp;  
-
-    document.getElementById('current-city-info').innerHTML = 
-        '<a href="#" class="add-favorite-city" onclick=addFavoriteCity()><i id="favorite-star" class="material-icons">star_border</i></a>' +
-        '<p class="main-city" id="curent-city">' + curCity + '</p>' +                    
-        '<p class="time" id="curent-time">'  + curTime + '</p>' +             
-        '<p class="date" id="curent-date">' + curDate +'</p>' +
-        '<p class="main-day" id="curent-day">' + curDay + '</p>' +
-        '<span class="main-icon"><i id="main-icon" class="wi ' + curIcon + '"></i></span>' +
-        '<p class="main-day-degree" id="current-degree">' + curDegree + ' <span class="degree-size">C&deg;</span>' + '</p>';                         
-    showForecstOnSomeDays(obj, 3);
-    showForecstOnSomeDays(obj, 10);
-}
+export default LocationSearch;
