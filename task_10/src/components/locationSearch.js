@@ -4,9 +4,6 @@ class LocationSearch {
       isValid: true,
     };
 
-    // bindAll(this, 'handleSubmit');
-
-
     this.host = document.createElement('div');
     this.host.classList.add('input-search center');
 

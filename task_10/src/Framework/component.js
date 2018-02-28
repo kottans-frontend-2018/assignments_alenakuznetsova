@@ -1,39 +1,39 @@
 class Component {
-  constructor(props) {
-    this.props = props || {};
-    this.state = {};
-    this.host = null;
-  }
+    constructor(props) {
+        this.props = props || {};
+        this.state = {};
+        this.host = null;
+    }
 
   updateState(nextState) {
-    this.state = Object.assign({}, this.state, nextState);
-    this._render();
+      this.state = Object.assign({}, this.state, nextState);
+      this._render();
   }
 
   update(nextProps) {
-    this.props = nextProps;
-    return this._render();
+      this.props = nextProps;
+      return this._render();
   }
 
   _render() {
-    const children = this.render();
+      const children = this.render();
 
-    this.host.innerHTML = '';
+      this.host.innerHTML = '';
 
-    if (typeof children === 'string') {
-      this.host.innerHTML = children;
-    } else if (Array.isArray(children)) {
-      this.host.append(...children);
-    } else {
-      this.host.append(children);
-    }
+      if (typeof children === 'string') {
+          this.host.innerHTML = children;
+      } else if (Array.isArray(children)) {
+          this.host.append(...children);
+      } else {
+          this.host.append(children);
+      }
 
-    console.log(this.host);
+      console.log(this.host);
 
-    return this.host;
+      return this.host;
   }
 
-  render() {}
+    render() {}
 }
 
 export default Component;
