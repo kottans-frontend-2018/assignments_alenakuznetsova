@@ -3,19 +3,17 @@ import printWeatherIcon from '../utils/printWeatherIcon.js';
 import showForecstOnSomeDays from '../components/showForecstOnSomeDays.js';
 
 class PrintCitiesInfo {
-    // constructor(obj) {
-    //     this.obj = obj;
-    // }
+    getWork(a) {
+        console.log('class works ' + a);
+    }
 
     getData(obj) {
-        this.obj = obj;
-        console.log('object ' + obj);
-        let curCity = this.obj.query.results.channel.location.city +', '+ this.obj.query.results.channel.location.country;
-        let curTime = this.obj.query.results.channel.lastBuildDate.substring(16,25);
-        let curDate = this.obj.query.results.channel.item.forecast[0].date;
-        let curDay = returnFullNameDay(this.obj.query.results.channel.item.forecast[0].day);
-        let curIcon = printWeatherIcon(this.obj.query.results.channel.item.condition.code);
-        let curDegree = this.obj.query.results.channel.item.condition.temp;
+        let curCity = obj.query.results.channel.location.city +', '+ obj.query.results.channel.location.country;
+        let curTime = obj.query.results.channel.lastBuildDate.substring(16,25);
+        let curDate = obj.query.results.channel.item.forecast[0].date;
+        let curDay = returnFullNameDay(obj.query.results.channel.item.forecast[0].day);
+        let curIcon = printWeatherIcon(obj.query.results.channel.item.condition.code);
+        let curDegree = obj.query.results.channel.item.condition.temp;
     }
 
     render() {
