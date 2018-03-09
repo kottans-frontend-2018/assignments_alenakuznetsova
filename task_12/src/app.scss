@@ -1,5 +1,6 @@
 $white:  #f8f8f8;
 $black: #1e1d26;
+$space: 30px;
 
 @function rem($px) {
 	@return $px / 16px + 0rem;
@@ -22,26 +23,35 @@ body {
     justify-content: space-between;
     background-color: $black;
     width: 100%;
-    padding: rem(20px) 0;
+    padding: rem($space) 0;
 }
 
 .top-time {
     color: $white;
     font-weight: 900;
     align-self: center;
-    padding-left: rem(20px);
+    padding-left: rem($space);
 }
 
 .top-right-info {
     align-self: center;
-    padding-right: rem(20px);
+    padding-right: rem($space);
 }
 
 .login {
     text-transform: uppercase;
+    background: transparent;
     color: $white;
     font-weight: 900;
     align-self: center;
+    text-decoration: none;
+    border: rem(1px) solid $white;
+    padding: rem(20px) rem(25px);
+
+    &:hover {
+        color: green;
+        border-color: green;
+    }
 }
 
 .main {
@@ -88,6 +98,6 @@ body {
 }
     .left-info,
     .right-info {
-        padding: 0 rem(20px);
+        padding: 0 rem($space);
     }
 

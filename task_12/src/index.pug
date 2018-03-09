@@ -9,10 +9,11 @@ body
             .top-time
                 time 12:12:12
             .top-logo 
-                img(src='./images/captainamerica.png')
+                img(src=require('./images/captainamerica.png'))
             .top-right-info
-                .login
-                    p login
+                a.login 
+                    i.fas.fa-user(aria-hidden="true") &nbsp;&nbsp;login
+                     
         main.main
             .pizza-container
                 .pizza-img
