@@ -9,7 +9,7 @@ function hashChanged() {
     if (window.location.hash.length > 0  && url =='registration'){
         renderRegistration();
     } else {        
-        renderLogin();
+        renderHome();
     }
 }
 
