@@ -1,6 +1,5 @@
 $white:  #f8f8f8;
 $black: #1e1d26;
-$grey: grey;
 $space: 30px;
 
 @function rem($px) {
@@ -62,7 +61,33 @@ body {
     background-color: $white;
     padding: rem(30px);
 }
-   
+    .pizza-container {
+        background-color: $white;
+        border: rem(1px) solid $black;
+        border-radius: rem(4px);              
+    }
+
+    .pizza-img {  
+        overflow: hidden;   
+        text-align: center;         
+    }
+
+        .img {            
+            max-height: rem(250px);
+            margin: rem(20px) auto;              
+        }
+
+    .pizza-order-info {        
+        background-color: green;
+        color: $white;
+    }
+        .div1,
+        .div2 {
+            display: flex;
+            justify-content: space-between;
+            padding: rem(10px) rem(20px);
+        }
+
 .footer {
     display: flex;
     justify-content: space-between;
@@ -76,38 +101,3 @@ body {
         padding: 0 rem($space);
     }
 
-    /////registration-form///////
-    .registration-form{      
-        width: 20%;
-        margin: auto;
-        background: $black;
-        padding: rem(75px) rem(100px);
-        text-align: center;
-
-        & input {
-            display: block;
-            padding: rem(10px) rem(15px);
-            margin: rem(15px) auto;            outline: 1;
-            box-sizing: border-box;
-            width: 100%;
-        }
-    }
-
-    .registration-form__title {
-        color: $white;
-        text-transform: uppercase;
-    }
-
-    .btn-registration {
-        padding: rem(10px) 0;
-        color: $white;
-        border: rem(8px) solid green;
-        text-transform: uppercase;
-        background: green;
-        width: 100%;
-    }
-
-    .message {
-        color: $grey;
-    }
-//////////////////////////////
