@@ -1,0 +1,93 @@
+$white:  #f8f8f8;
+$black: #1e1d26;
+
+@function rem($px) {
+	@return $px / 16px + 0rem;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+.container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.header {
+    display: inline-flex;
+    justify-content: space-between;
+    background-color: $black;
+    width: 100%;
+    padding: rem(20px) 0;
+}
+
+.top-time {
+    color: $white;
+    font-weight: 900;
+    align-self: center;
+    padding-left: rem(20px);
+}
+
+.top-right-info {
+    align-self: center;
+    padding-right: rem(20px);
+}
+
+.login {
+    text-transform: uppercase;
+    color: $white;
+    font-weight: 900;
+    align-self: center;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: rem(30px);
+    background-color: $white;
+    padding: rem(30px);
+}
+    .pizza-container {
+        background-color: $white;
+        border: rem(1px) solid $black;
+        border-radius: rem(4px);              
+    }
+
+    .pizza-img {  
+        overflow: hidden;   
+        text-align: center;         
+    }
+
+        .img {            
+            max-height: rem(250px);
+            margin: rem(20px) auto;              
+        }
+
+    .pizza-order-info {        
+        background-color: green;
+        color: $white;
+    }
+        .div1,
+        .div2 {
+            display: flex;
+            justify-content: space-between;
+            padding: rem(10px) rem(20px);
+        }
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: $black;
+    padding: rem(20px) 0;
+    color: $white;
+}
+    .left-info,
+    .right-info {
+        padding: 0 rem(20px);
+    }
+
