@@ -9,121 +9,21 @@ body
             .top-time
                 time 12:12:12
             .top-logo 
-                img(src='./images/captainamerica.png')
+                img(src=require('./images/captainamerica.png'))
             .top-right-info
-                .login
-                    p login
-        main.main
-            .pizza-container
-                .pizza-img
-                    img.img(src=require('./images/pizza-PomoLivo.png'))
-                .pizza-order-info
-                    .div1
-                        span xx
-                        span xx
-                    .div2
-                        span xx
-                        span xx
-            .pizza-container
-                .pizza-img
-                    img.img(src=require('./images/pizza-PomoLivo.png'))
-                .pizza-order-info
-                    .div1
-                        span xx
-                        span xx
-                    .div2
-                        span xx
-                        span xx
-            .pizza-container
-                .pizza-img
-                    img.img(src=require('./images/pizza-PomoLivo.png'))
-                .pizza-order-info
-                    .div1
-                        span xx
-                        span xx
-                    .div2
-                        span xx
-                        span xx
-            .pizza-container
-                .pizza-img
-                    img.img(src=require('./images/pizza-PomoLivo.png'))
-                .pizza-order-info
-                    .div1
-                        span xx
-                        span xx
-                    .div2
-                        span xx
-                        span xx
-            .pizza-container
-                .pizza-img
-                    img.img(src=require('./images/pizza-PomoLivo.png'))
-                .pizza-order-info
-                    .div1
-                        span xx
-                        span xx
-                    .div2
-                        span xx
-                        span xx
-            .pizza-container
-                .pizza-img
-                    img.img(src=require('./images/pizza-PomoLivo.png'))
-                .pizza-order-info
-                    .div1
-                        span xx
-                        span xx
-                    .div2
-                        span xx
-                        span xx
-            .pizza-container
-                .pizza-img
-                    img.img(src=require('./images/pizza-PomoLivo.png'))
-                .pizza-order-info
-                    .div1
-                        span xx
-                        span xx
-                    .div2
-                        span xx
-                        span xx
-            .pizza-container
-                .pizza-img
-                    img.img(src=require('./images/pizza-PomoLivo.png'))
-                .pizza-order-info
-                    .div1
-                        span xx
-                        span xx
-                    .div2
-                        span xx
-                        span xx
-            .pizza-container
-                .pizza-img
-                    img.img(src=require('./images/pizza-PomoLivo.png'))
-                .pizza-order-info
-                    .div1
-                        span xx
-                        span xx
-                    .div2
-                        span xx
-                        span xx
-            .pizza-container
-                .pizza-img
-                    img.img(src=require('./images/pizza-PomoLivo.png'))
-                .pizza-order-info
-                    .div1
-                        span xx
-                        span xx
-                    .div2
-                        span xx
-                        span xx
-            .pizza-container
-                .pizza-img
-                    img.img(src=require('./images/pizza-PomoLivo.png'))
-                .pizza-order-info
-                    .div1
-                        span xx
-                        span xx
-                    .div2
-                        span xx
-                        span xx
+                a.login(href="#login") login
+                    //- i.fas.fa-user(aria-hidden="true") &nbsp;&nbsp;login
+                     
+        .main#main-container 
+            form.registration-form
+                span.registration-form__title registration
+                input(type='text', placeholder='Name')
+                input(type='text', placeholder='login')
+                input(type='text', placeholder='password')
+                button.btn-registration registration
+                p.message
+                    | Already registered?
+                    a(href='#login')  Login 
 
         footer.footer
             .left-info

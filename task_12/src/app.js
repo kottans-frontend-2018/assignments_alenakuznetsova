@@ -1,4 +1,7 @@
 import css from './app.scss';
+import Router from './utils/Router';
 
 
-console.log('Hello webpack 3');
+const router = new Router();
+
+window.onload = router.hashChanged();
