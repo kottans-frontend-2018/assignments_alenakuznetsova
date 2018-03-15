@@ -84,10 +84,11 @@ body {
         padding: rem(75px) rem(100px);
         text-align: center;
 
-        & input {
+        & input, select {
             display: block;
             padding: rem(10px) rem(15px);
-            margin: rem(15px) auto;            outline: 1;
+            margin: rem(15px) auto;            
+            outline: 1;
             box-sizing: border-box;
             width: 100%;
         }

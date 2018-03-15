@@ -1,11 +1,15 @@
 class LoginForm {
     constructor() {
+        
     }
 
     render() {
         document.getElementById('main-container').innerHTML = 
         `<form class="registration-form">
             <span class="registration-form__title">login</span>
+            <select id="select-shop">
+                <option value=" ">Select pizza shop</option>;
+            </select>
             <input type="text" placeholder="login">
             <input type="text" placeholder="password">
             <button class="btn-registration">login</button>
