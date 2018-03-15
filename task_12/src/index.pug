@@ -12,18 +12,17 @@ body
                 img(src=require('./images/captainamerica.png'))
             .top-right-info
                 a.login(href="#login") login
-                    //- i.fas.fa-user(aria-hidden="true") &nbsp;&nbsp;login
                      
         .main#main-container 
             form.registration-form
-                span.registration-form__title registration
+                span.registration-form__title login
                 input(type='text', placeholder='Name')
                 input(type='text', placeholder='login')
                 input(type='text', placeholder='password')
-                button.btn-registration registration
+                button.btn-registration login
                 p.message
                     | Already registered?
-                    a(href='#login')  Login 
+                    a(href='#registration')  &nbsp;Registration 
 
         footer.footer
             .left-info
