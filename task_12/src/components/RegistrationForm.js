@@ -21,13 +21,14 @@ class RegistrationForm {
             var el = document.getElementById('btn-login');
 
         el.onclick = () => {
+            const shop = document.querySelector('#select-shop').value;
             const user = document.querySelector('#user').value;
             const email = document.querySelector('#email').value;
             const password = document.querySelector('#password').value;
             const repeat_password = document.querySelector('#repeat_password').value;
             const store_password = document.querySelector('#store_password').value;
 
-            console.log(user, email);
+            console.log(shop, user, email, password );
         }
     }
 }
