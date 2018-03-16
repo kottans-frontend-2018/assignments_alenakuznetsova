@@ -29,7 +29,24 @@ class RegistrationForm {
             const store_password = document.querySelector('#store_password').value;
 
             console.log(shop, user, email, password );
-        }
+            fetch('https://pizza-tele.ga/api/v1/user/create', {
+                method: 'post',
+                headers: {
+                    'Accept': 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(
+                    { username: { user }, 
+                      password : { password },
+                      password_repeat : { repeat_password },
+                      email : { email,
+                      store_id : 8,
+                      store_password : { store_password }
+                     }
+                })
+                    }).then(res=>res.json())
+                    .then(res => console.log(res));
+            }
     }
 }
 
