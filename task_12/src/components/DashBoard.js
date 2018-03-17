@@ -2,7 +2,7 @@ class DashBoard {
     constructor() {
     }
 
-    renderHome() {
+    renderDashBoard() {
         document.getElementById('main-container').innerHTML = 
             `<div class="pizza-container">
                 <div class="pizza-img">

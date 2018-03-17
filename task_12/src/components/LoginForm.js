@@ -32,7 +32,10 @@ class LoginForm {
                       password : password 
                 })
             }).then(res => res.json())
-            .then(res => console.log(res));
+            .then(res => console.log(res))
+            .then( () => {
+                window.location.hash = 'home'
+            } );
         }
     }
 }

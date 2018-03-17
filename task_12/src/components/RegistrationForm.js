@@ -35,16 +35,19 @@ class RegistrationForm {
                     'Accept': 'application/json, text/plain, */*',
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(
-                    { username: user , 
-                      password : password,
-                      password_repeat : repeat_password,
-                      email : email,
-                      store_id : 8,
-                      store_password : store_password 
+                body: JSON.stringify({
+                    username: user, 
+                    password : password,
+                    password_repeat : repeat_password,
+                    email : email,
+                    store_id : 8,
+                    store_password : store_password 
                 })
             }).then(res => res.json())
-            .then(res => console.log(res));
+            .then(res => console.log(res))
+            .then( () => {
+                window.location.hash = 'login'
+            } );
         }
     }
 }
