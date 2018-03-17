@@ -1,3 +1,5 @@
+// import { AUTH_SERVICE } from '../store/login.service';
+
 class RegistrationForm {
     constructor() {
     }
@@ -14,21 +16,19 @@ class RegistrationForm {
                 <input id='password' type='password' placeholder='password'>
                 <input id='repeat_password' type='password' placeholder='repeat password'>
                 <input id='store_password' type='password' placeholder='Store password'>
-                <button id='btn-login' class='btn-registration' type='button'>registration</button>
-                <p class='message'>Already registered?<a href='#login'>&nbsp;Login</a></p>
+                <button id='btn-registration' class='btn-registration' type='button'>registration</button>
+                <p class='message'>Already registered?&nbsp;<a href='#login'>Login</a></p>
             </form>`;
 
-            var el = document.getElementById('btn-login');
+            var el = document.getElementById('btn-registration');
 
         el.onclick = () => {
             const shop = document.querySelector('#select-shop').value;
             const user = document.querySelector('#user').value;
             const email = document.querySelector('#email').value;
-            const password = document.querySelector('#password').value;
             const repeat_password = document.querySelector('#repeat_password').value;
             const store_password = document.querySelector('#store_password').value;
 
-            console.log(shop, user, email, password );
             fetch('https://pizza-tele.ga/api/v1/user/create', {
                 method: 'post',
                 headers: {
@@ -36,17 +36,16 @@ class RegistrationForm {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(
-                    { username: { user }, 
-                      password : { password },
-                      password_repeat : { repeat_password },
-                      email : { email,
+                    { username: user , 
+                      password : password,
+                      password_repeat : repeat_password,
+                      email : email,
                       store_id : 8,
-                      store_password : { store_password }
-                     }
+                      store_password : store_password 
                 })
-                    }).then(res=>res.json())
-                    .then(res => console.log(res));
-            }
+            }).then(res => res.json())
+            .then(res => console.log(res));
+        }
     }
 }
 

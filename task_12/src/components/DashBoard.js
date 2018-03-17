@@ -1,4 +1,4 @@
-class Home {
+class DashBoard {
     constructor() {
     }
 
@@ -20,4 +20,4 @@ class Home {
     }
 }
 
-export default Home;
+export default DashBoard;

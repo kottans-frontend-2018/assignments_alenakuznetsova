@@ -11,16 +11,14 @@ class Router {
 
     hashChanged() {  
         let url = window.location.hash.slice(1);
-        if (window.location.hash.length > 0  && url =='registration'){
+        if (window.location.hash.length > 0  && url =='registration') {
             let reg = new RegistrationForm();
                 reg.renderRegistration();
             let json_data = new DataApi();
                 json_data.getObject();
-        } else {     
+        } else {
             let login = new LoginForm();   
-                login.render();
-            let json_data = new DataApi();
-                json_data.getObject();
+                login.renderLogin();
         }
     }   
 }

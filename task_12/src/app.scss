@@ -34,6 +34,11 @@ body {
     padding-left: rem($space);
 }
 
+.top-logo__img {
+    height: rem(100px);
+    width: rem(100px);
+}
+
 .top-right-info {
     align-self: center;
     padding-right: rem($space);
@@ -77,7 +82,8 @@ body {
     }
 
     /////registration-form///////
-    .registration-form{      
+    .registration-form,
+    .login-form {      
         width: 20%;
         margin: auto;
         background: $black;
@@ -99,7 +105,8 @@ body {
         text-transform: uppercase;
     }
 
-    .btn-registration {
+    .btn-registration,
+    .btn-login {
         padding: rem(10px) 0;
         color: $white;
         border: rem(8px) solid green;

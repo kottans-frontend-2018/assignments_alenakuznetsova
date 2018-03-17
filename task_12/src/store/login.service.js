@@ -1,23 +1,31 @@
-export class AuthService {
+class AuthService {
     constructor(){
         this._token = null;
         this._claims = null;
     }
 
-    get token(){
+    // get token(){
 
-    }
-    set token(){
+    // }
+    // set token(){
 
-    }
+    // }
 
-    isAuthorized(){
+    // isAuthorized(){
 
-    }
+    // }
 
-    tokenIsNotExpired(){
-        
-    }
+    // tokenIsNotExpired(){
+
+    // }
+
+    // login() {
+
+    // }
+
+    // registration() {
+
+    // }
 
     parseJwtClaims(jwtToken) {
         if (jwtToken) {
@@ -28,3 +36,5 @@ export class AuthService {
         return {}
     }
 }
+
+// export const AUTH_SERVICE = new AuthService();
