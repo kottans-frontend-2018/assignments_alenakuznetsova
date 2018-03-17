@@ -5,6 +5,7 @@ import DashBoard from '../components/DashBoard.js';
 
 class Router {    
     constructor () {  
+        window.location.hash = 'login';
         window.addEventListener('hashchange', () => {  
             this.hashChanged();  
         }); 
@@ -15,7 +16,7 @@ class Router {
         if (window.location.hash.length > 0  && url =='registration') {
             let reg = new RegistrationForm();
                 reg.renderRegistration();
-                
+
             let json_data = new DataApi();
                 json_data.getObject();
         } else if (window.location.hash.length > 0  && url =='home') {

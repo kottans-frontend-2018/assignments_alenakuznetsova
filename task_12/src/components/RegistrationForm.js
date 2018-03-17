@@ -44,10 +44,13 @@ class RegistrationForm {
                     store_password : store_password 
                 })
             }).then(res => res.json())
-            .then(res => console.log(res))
-            .then( () => {
-                window.location.hash = 'login'
-            } );
+            .then( (res) => {
+                if (res.success == true) {
+                    window.location.hash = 'login';
+                } else {
+                    window.location.hash = 'registration';
+                }                
+            });
         }
     }
 }

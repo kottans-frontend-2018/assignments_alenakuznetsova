@@ -17,8 +17,6 @@ class LoginForm {
         el.onclick = () => {
             const user = document.querySelector('#user').value;
             const password = document.querySelector('#password').value;
-
-            console.log(user, password);
             
             fetch('https://pizza-tele.ga/api/v1/user/login', {
                 method: 'post',
@@ -26,16 +24,18 @@ class LoginForm {
                     'Accept': 'application/json, text/plain, */*',
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(
-                    { 
-                      username: user , 
-                      password : password 
+                body: JSON.stringify({ 
+                    username : user , 
+                    password : password 
                 })
             }).then(res => res.json())
-            .then(res => console.log(res))
-            .then( () => {
-                window.location.hash = 'home'
-            } );
+            .then( (res) => {
+                if (res.success == true) {
+                    window.location.hash = 'home';
+                } else {
+                    window.location.hash = 'login';
+                }                
+            });
         }
     }
 }
