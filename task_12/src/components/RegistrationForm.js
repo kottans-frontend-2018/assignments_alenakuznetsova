@@ -17,7 +17,7 @@ class RegistrationForm {
                 <input id='repeat_password' type='password' placeholder='repeat password'>
                 <input id='store_password' type='password' placeholder='Store password'>
                 <button id='btn-registration' class='btn-registration' type='button'>registration</button>
-                <p class='message'>Already registered?&nbsp;<a href='#login'>Login</a></p>
+                <p class='message'>Haven't registered yet?&nbsp;<a href='#login'>Login</a></p>
             </form>`;
 
             var el = document.getElementById('btn-registration');

@@ -1,17 +1,19 @@
 $white:  #f8f8f8;
 $black: #1e1d26;
-$grey: grey;
+$grey: #BDBDBD;
+$green: #43A047;
 $space: 30px;
+$mainFont: 16px;
 
 @function rem($px) {
-	@return $px / 16px + 0rem;
+	@return $px / $mainFont + 0rem;
 }
 
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
-    font-size: 16px;
+    font-size: $mainFont;
 }
 
 .container {
@@ -55,8 +57,8 @@ body {
     padding: rem(20px) rem(25px);
 
     &:hover {
-        color: green;
-        border-color: green;
+        color: $green;
+        border-color: $green;
     }
 }
 
@@ -80,6 +82,42 @@ body {
     .right-info {
         padding: 0 rem($space);
     }
+/////////Pizza-container/////////
+.btn-add {
+    color: $black;
+    border: rem(1px) solid $black;
+    text-transform: uppercase;
+    background: #EEEEEE;
+    width: 100%;
+    border-radius: rem(4px);
+}
+
+.pizza-container {
+    background-color: $white;
+    border: rem(1px) solid $black;
+    border-radius: rem(4px);              
+}
+
+.pizza-img {  
+    overflow: hidden;   
+    text-align: center;         
+}
+ 
+    .img {            
+        max-height: rem(250px);
+        margin: rem(20px) auto;              
+    }
+ 
+     .pizza-order-info {        
+         background-color: $green;
+         color: $white;
+     }
+         .pizza-order-info__left,
+         .pizza-order-info__right {
+             display: flex;
+             justify-content: space-between;
+             padding: rem(10px) rem(20px);
+         }
 
     /////registration-form///////
     .registration-form,
@@ -109,10 +147,11 @@ body {
     .btn-login {
         padding: rem(10px) 0;
         color: $white;
-        border: rem(8px) solid green;
+        border: rem(8px) solid $green;
         text-transform: uppercase;
-        background: green;
+        background: $green;
         width: 100%;
+        font-weight: bold;
     }
 
     .message {
