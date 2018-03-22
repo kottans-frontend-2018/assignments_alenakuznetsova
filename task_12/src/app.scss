@@ -60,6 +60,12 @@ body {
         color: $green;
         border-color: $green;
     }
+
+    &::before {
+        display: none;
+        font-family: "Font Awesome 5 Solid";
+        content: "\f007";
+    }
 }
 
 .main {
@@ -90,6 +96,10 @@ body {
     background: #EEEEEE;
     width: 100%;
     border-radius: rem(4px);
+
+    &:hover {
+        box-shadow: rem(1px) rem(0px) rem(10px) rem(5px) rgba(0, 0, 0, .2);
+    }
 }
 
 .pizza-container {
