@@ -3,6 +3,11 @@ class DashBoard {
     }
 
     renderDashBoard() {
+        document.getElementById('log-info').innerHTML = 
+        `<a href="#login" class="login" id="log-out">
+            <i aria-hidden="true" class="fas fa-user"></i>&nbsp;&nbsp;log out          
+        </a>`;
+
         const url = require('../images/pizza-PomoLivo.png');
 
         document.getElementById('main-container').innerHTML = 

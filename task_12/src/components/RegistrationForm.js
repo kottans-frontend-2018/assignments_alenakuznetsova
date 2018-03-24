@@ -5,6 +5,11 @@ class RegistrationForm {
     }
 
     renderRegistration() {
+        document.getElementById('log-info').innerHTML = 
+        `<a href="#login" class="login">
+            <i aria-hidden="true" class="fas fa-user"></i>&nbsp;&nbsp;login            
+        </a>`;
+        
         document.getElementById('main-container').innerHTML = 
             `<form class='registration-form'>
                 <span class='registration-form__title'>registration</span>

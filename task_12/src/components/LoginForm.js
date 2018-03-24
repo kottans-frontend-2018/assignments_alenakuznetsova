@@ -3,6 +3,11 @@ class LoginForm {
     }
 
     renderLogin() {
+        document.getElementById('log-info').innerHTML = 
+        `<a href="#login" class="login">
+            <i aria-hidden="true" class="fas fa-user"></i>&nbsp;&nbsp;login            
+        </a>`;
+
         document.getElementById('main-container').innerHTML = 
         `<form class='login-form'>
             <span class='registration-form__title'>login</span>
@@ -31,6 +36,7 @@ class LoginForm {
             }).then(res => res.json())
             .then( (res) => {
                 if (res.success == true) {
+                    sessionStorage.setItem('Login', 'true');
                     window.location.hash = 'home';
                 } else {
                     window.location.hash = 'login';
@@ -38,6 +44,8 @@ class LoginForm {
             });
         }
     }
+
+
 }
 
 export default LoginForm;
