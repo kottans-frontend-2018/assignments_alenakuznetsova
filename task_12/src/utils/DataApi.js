@@ -25,7 +25,7 @@ class DataApi {
 
         fetch( 'https://pizza-tele.ga/api/v1/store/list' )  
             .then(status)  
-            .then(json)  
+            .then(json)
             .then( (obj) => { 
                 printList(obj); 
             });  
