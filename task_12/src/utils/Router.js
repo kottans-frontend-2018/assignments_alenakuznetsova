@@ -16,18 +16,15 @@ class Router {
         if (window.location.hash.length > 0  && url =='registration') {
             let reg = new RegistrationForm();
                 reg.renderRegistration();
-                // this.rout = 'registration';
 
             let json_data = new DataApi();
                 json_data.getObject();
-        } else if (window.location.hash.length > 0 && sessionStorage.getItem('Login') && url =='home') {
+        } else if (window.location.hash.length > 0 && localStorage.getItem('Login') == 'true' && url =='home') {
             let home = new DashBoard();
                 home.renderDashBoard();
-                // this.rout = 'home';
         } else {
             let login = new LoginForm();   
                 login.renderLogin();
-                // this.rout = 'login';
         }
     }   
 }

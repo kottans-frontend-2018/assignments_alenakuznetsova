@@ -17,7 +17,7 @@ class LoginForm {
             <p class='message'>Already registered?&nbsp;<a href='#registration'>Registration</a></p>
         </form>`;
 
-        var el = document.getElementById('btn-login');
+        let el = document.getElementById('btn-login');
 
         el.onclick = () => {
             const user = document.querySelector('#user').value;
@@ -36,7 +36,7 @@ class LoginForm {
             }).then(res => res.json())
             .then( (res) => {
                 if (res.success == true) {
-                    sessionStorage.setItem('Login', 'true');
+                    localStorage.setItem('Login', 'true');
                     window.location.hash = 'home';
                 } else {
                     window.location.hash = 'login';
