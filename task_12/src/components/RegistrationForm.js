@@ -33,40 +33,33 @@ class RegistrationForm {
             const password = document.querySelector('#password').value;
             const password_repeat = document.querySelector('#repeat_password').value;
             const email = document.querySelector('#email').value;
-            // const store_id = '8';
+            const store_id = '9';
             const store_password = document.querySelector('#store_password').value;            
 
-            // AUTH_SERVICE.registration({
-            //         username: username, 
+            AUTH_SERVICE.registration({username, password, password_repeat, email, store_id, store_password});
+
+            // fetch('https://pizza-tele.ga/api/v1/user/create', {
+            //     method: 'post',
+            //     headers: {
+            //         'Accept': 'application/json, text/plain, */*',
+            //         'Content-Type': 'application/json'
+            //     },
+            //     body: JSON.stringify({
+            //         username: user, 
             //         password : password,
-            //         password_repeat : password_repeat,
+            //         password_repeat : repeat_password,
             //         email : email,
             //         store_id : 8,
             //         store_password : store_password 
-            //     });
-
-            fetch('https://pizza-tele.ga/api/v1/user/create', {
-                method: 'post',
-                headers: {
-                    'Accept': 'application/json, text/plain, */*',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    username: user, 
-                    password : password,
-                    password_repeat : repeat_password,
-                    email : email,
-                    store_id : 8,
-                    store_password : store_password 
-                })
-            }).then(res => res.json())
-            .then( (res) => {
-                if (res.success == true) {
-                    window.location.hash = 'login';
-                } else {
-                    window.location.hash = 'registration';
-                }                
-            });
+            //     })
+            // }).then(res => res.json())
+            // .then( (res) => {
+            //     if (res.success == true) {
+            //         window.location.hash = 'login';
+            //     } else {
+            //         window.location.hash = 'registration';
+            //     }                
+            // });
         }
     }
 }
