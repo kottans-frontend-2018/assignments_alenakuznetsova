@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "1f2b1fd324df905ca2b2"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "cd903792bd7a1e54334b"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -735,7 +735,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "body{font-family:Helvetica Neue,Helvetica,Arial,sans-serif;margin:0;padding:0;font-size:16px}.container{width:100%;overflow:hidden}.header{display:inline-flex;justify-content:space-between;background-color:#1e1d26;width:100%;padding:1.875rem 0}.top-time{color:#f8f8f8;font-weight:900;align-self:center;padding-left:1.875rem}.top-right-info{align-self:center;padding-right:1.875rem}.login{text-transform:uppercase;background:transparent;color:#f8f8f8;font-weight:900;align-self:center;text-decoration:none;border:.0625rem solid #f8f8f8;padding:1.25rem 1.5625rem}.login:hover{color:green;border-color:green}.main{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));grid-gap:1.875rem;background-color:#f8f8f8;padding:1.875rem}.footer{display:flex;justify-content:space-between;width:100%;background-color:#1e1d26;padding:1.25rem 0;color:#f8f8f8}.left-info,.right-info{padding:0 1.875rem}.login-form,.registration-form{width:20%;margin:auto;background:#1e1d26;padding:4.6875rem 6.25rem;text-align:center}.login-form input,.login-form select,.registration-form input,.registration-form select{display:block;padding:.625rem .9375rem;margin:.9375rem auto;outline:1;box-sizing:border-box;width:100%}.btn-login,.btn-registration,.registration-form__title{color:#f8f8f8;text-transform:uppercase}.btn-login,.btn-registration{padding:.625rem 0;border:.5rem solid green;background:green;width:100%}.message{color:grey}", ""]);
+exports.push([module.i, "body{font-family:Helvetica Neue,Helvetica,Arial,sans-serif;margin:0;padding:0;font-size:16px;background:#f8f8f8}.container{width:100%;overflow:hidden}.header{display:inline-flex;justify-content:space-between;background-color:#1e1d26;width:100%;padding:1.875rem 0}.top-time{color:#f8f8f8;font-weight:900;align-self:center;padding-left:1.875rem}.top-logo__img{height:6.25rem;width:6.25rem}.top-right-info{align-self:center;padding-right:1.875rem}.login{text-transform:uppercase;background:transparent;color:#f8f8f8;font-weight:900;align-self:center;text-decoration:none;border:.0625rem solid #f8f8f8;padding:1.25rem 1.5625rem}.login:hover{color:#43a047;border-color:#43a047}.login:before{display:none;font-family:Font Awesome\\ 5 Solid;content:\"\\F007\"}.main{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));grid-gap:1.875rem;padding:1.875rem}.footer{display:flex;justify-content:space-between;width:100%;background-color:#1e1d26;height:4.375rem;color:#f8f8f8}.left-info,.right-info{padding:0 1.875rem}.btn-add{color:#1e1d26;border:.0625rem solid #1e1d26;text-transform:uppercase;background:#eee;width:100%;border-radius:.25rem}.btn-add:hover{box-shadow:.0625rem 0 .625rem .3125rem rgba(0,0,0,.2)}.pizza-container{background-color:#f8f8f8;border:.0625rem solid #1e1d26;border-radius:.25rem}.pizza-img{overflow:hidden;text-align:center}.img{max-height:15.625rem;margin:1.25rem auto}.pizza-order-info{background-color:#43a047;color:#f8f8f8}.pizza-order-info__left,.pizza-order-info__right{display:flex;justify-content:space-between;padding:.625rem 1.25rem}.login-form,.registration-form{width:20%;margin:auto;background:#1e1d26;padding:4.6875rem 6.25rem;text-align:center}.login-form input,.login-form select,.registration-form input,.registration-form select{display:block;padding:.625rem .9375rem;margin:.9375rem auto;outline:1;box-sizing:border-box;width:100%}.btn-login,.btn-registration,.registration-form__title{color:#f8f8f8;text-transform:uppercase}.btn-login,.btn-registration{padding:.625rem 0;border:.5rem solid #43a047;background:#43a047;width:100%;font-weight:700}.message{color:#bdbdbd}", ""]);
 
 // exports
 
@@ -1312,12 +1312,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_scss__ = __webpack_require__("./src/app.scss");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__app_scss__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_Router__ = __webpack_require__("./src/utils/Router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_time_js__ = __webpack_require__("./src/components/time.js");
+
 
 
 
 const router = new __WEBPACK_IMPORTED_MODULE_1__utils_Router__["a" /* default */]();
+const time = new __WEBPACK_IMPORTED_MODULE_2__components_time_js__["a" /* default */]();
 
-
+window.onload = time.render ();
 window.onload = router.hashChanged();
 
 /***/ }),
@@ -1373,6 +1376,103 @@ if(true) {
 
 /***/ }),
 
+/***/ "./src/components/DashBoard.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+class DashBoard {
+    constructor() {
+    }
+
+    renderDashBoard() {
+        document.getElementById('log-info').innerHTML = 
+        `<a href="#login" class="login" id="log-out">
+            <i aria-hidden="true" class="fas fa-user"></i>&nbsp;&nbsp;log out          
+        </a>`;
+
+        const url = __webpack_require__("./src/images/pizza-PomoLivo.png");
+
+        document.getElementById('main-container').innerHTML = 
+        `<div class="pizza-container">
+            <div class="pizza-img">
+                <img class="img" src="${url}">
+            </div>
+            <div class="pizza-order-info">
+                <div class="pizza-order-info__left">
+                    <span>xx</span><span>xx</span>
+                </div>
+                <div class="pizza-order-info__right">
+                    <span>xx</span><span>xx</span>
+                </div>
+            </div>
+        </div>
+        <div class="pizza-container">
+            <div class="pizza-img">
+                <img class="img" src="${url}">
+            </div>
+            <div class="pizza-order-info">
+                <div class="pizza-order-info__left">
+                    <span>xx</span><span>xx</span>
+                </div>
+                <div class="pizza-order-info__right">
+                    <span>xx</span><span>xx</span>
+                </div>
+            </div>
+        </div>
+        <div class="pizza-container">
+            <div class="pizza-img">
+                <img class="img" src="${url}">
+            </div>
+            <div class="pizza-order-info">
+                <div class="pizza-order-info__left">
+                    <span>xx</span><span>xx</span>
+                </div>
+                <div class="pizza-order-info__right">
+                    <span>xx</span><span>xx</span>
+                </div>
+            </div>
+        </div>
+        <div class="pizza-container">
+            <div class="pizza-img">
+                <img class="img" src="${url}">
+            </div>
+            <div class="pizza-order-info">
+                <div class="pizza-order-info__left">
+                    <span>xx</span><span>xx</span>
+                </div>
+                <div class="pizza-order-info__right">
+                    <span>xx</span><span>xx</span>
+                </div>
+            </div>
+        </div>
+         <div class="pizza-container">
+            <div class="pizza-img">
+                <img class="img" src="${url}">
+            </div>
+            <div class="pizza-order-info">
+                <div class="pizza-order-info__left">
+                    <span>xx</span><span>xx</span>
+                </div>
+                <div class="pizza-order-info__right">
+                    <span>xx</span><span>xx</span>
+                </div>
+            </div>
+        </div>
+        <button id='btn-add' class='btn-add' type='button'>+ Add new pizza</button>`;
+    }
+
+    logOut() {
+        let el = document.getElementById('log-out');
+        el.onclick = () => {
+            localStorage.setItem('Login', 'false');
+        }
+    }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (DashBoard);
+
+/***/ }),
+
 /***/ "./src/components/LoginForm.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1382,22 +1482,25 @@ class LoginForm {
     }
 
     renderLogin() {
+        document.getElementById('log-info').innerHTML = 
+        `<a href="#login" class="login">
+            <i aria-hidden="true" class="fas fa-user"></i>&nbsp;&nbsp;login            
+        </a>`;
+
         document.getElementById('main-container').innerHTML = 
         `<form class='login-form'>
             <span class='registration-form__title'>login</span>
             <input id='user' type='text' placeholder='login'>
             <input id='password' type='password' placeholder='password'>
             <button id='btn-login' class='btn-login'  type='button'>login</button>
-            <p class='message'>Already registered?<a href='#registration'>&nbsp;Registration</a></p>
+            <p class='message'>Already registered?&nbsp;<a href='#registration'>Registration</a></p>
         </form>`;
 
-        var el = document.getElementById('btn-login');
+        let el = document.getElementById('btn-login');
 
         el.onclick = () => {
             const user = document.querySelector('#user').value;
             const password = document.querySelector('#password').value;
-
-            console.log(user, password);
             
             fetch('https://pizza-tele.ga/api/v1/user/login', {
                 method: 'post',
@@ -1405,15 +1508,23 @@ class LoginForm {
                     'Accept': 'application/json, text/plain, */*',
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(
-                    { 
-                      username: user , 
-                      password : password 
+                body: JSON.stringify({ 
+                    username : user , 
+                    password : password 
                 })
             }).then(res => res.json())
-            .then(res => console.log(res));
+            .then( (res) => {
+                if (res.success == true) {
+                    localStorage.setItem('Login', 'true');
+                    window.location.hash = 'home';
+                } else {
+                    window.location.hash = 'login';
+                }                
+            });
         }
     }
+
+
 }
 
 /* harmony default export */ __webpack_exports__["a"] = (LoginForm);
@@ -1431,6 +1542,11 @@ class RegistrationForm {
     }
 
     renderRegistration() {
+        document.getElementById('log-info').innerHTML = 
+        `<a href="#login" class="login">
+            <i aria-hidden="true" class="fas fa-user"></i>&nbsp;&nbsp;login            
+        </a>`;
+        
         document.getElementById('main-container').innerHTML = 
             `<form class='registration-form'>
                 <span class='registration-form__title'>registration</span>
@@ -1443,7 +1559,7 @@ class RegistrationForm {
                 <input id='repeat_password' type='password' placeholder='repeat password'>
                 <input id='store_password' type='password' placeholder='Store password'>
                 <button id='btn-registration' class='btn-registration' type='button'>registration</button>
-                <p class='message'>Already registered?<a href='#login'>&nbsp;Login</a></p>
+                <p class='message'>Haven't registered yet?&nbsp;<a href='#login'>Login</a></p>
             </form>`;
 
             var el = document.getElementById('btn-registration');
@@ -1461,21 +1577,58 @@ class RegistrationForm {
                     'Accept': 'application/json, text/plain, */*',
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(
-                    { username: user , 
-                      password : password,
-                      password_repeat : repeat_password,
-                      email : email,
-                      store_id : 8,
-                      store_password : store_password 
+                body: JSON.stringify({
+                    username: user, 
+                    password : password,
+                    password_repeat : repeat_password,
+                    email : email,
+                    store_id : 8,
+                    store_password : store_password 
                 })
             }).then(res => res.json())
-            .then(res => console.log(res));
+            .then( (res) => {
+                if (res.success == true) {
+                    window.location.hash = 'login';
+                } else {
+                    window.location.hash = 'registration';
+                }                
+            });
         }
     }
 }
 
 /* harmony default export */ __webpack_exports__["a"] = (RegistrationForm);
+
+/***/ }),
+
+/***/ "./src/components/time.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+class Time {
+    getDate() {
+        let d = new Date();
+        let time = d.toLocaleTimeString();
+
+        document.getElementById('time').innerHTML = time;        
+    }
+
+    render () {
+        setInterval(this.getDate, 0);
+    }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (Time);
+
+
+
+
+/***/ }),
+
+/***/ "./src/images/pizza-PomoLivo.png":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "images/pizza-PomoLivo.png";
 
 /***/ }),
 
@@ -1510,7 +1663,7 @@ class DataApi {
 
         fetch( 'https://pizza-tele.ga/api/v1/store/list' )  
             .then(status)  
-            .then(json)  
+            .then(json)
             .then( (obj) => { 
                 printList(obj); 
             });  
@@ -1528,14 +1681,17 @@ class DataApi {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_LoginForm__ = __webpack_require__("./src/components/LoginForm.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_RegistrationForm__ = __webpack_require__("./src/components/RegistrationForm.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_DataApi_js__ = __webpack_require__("./src/utils/DataApi.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_DashBoard_js__ = __webpack_require__("./src/components/DashBoard.js");
+
 
 
 
 
 class Router {    
     constructor () {  
+        window.location.hash = 'login';
         window.addEventListener('hashchange', () => {  
-            this.hashChanged();;  
+            this.hashChanged();  
         }); 
     }
 
@@ -1544,8 +1700,12 @@ class Router {
         if (window.location.hash.length > 0  && url =='registration') {
             let reg = new __WEBPACK_IMPORTED_MODULE_1__components_RegistrationForm__["a" /* default */]();
                 reg.renderRegistration();
+
             let json_data = new __WEBPACK_IMPORTED_MODULE_2__utils_DataApi_js__["a" /* default */]();
                 json_data.getObject();
+        } else if (window.location.hash.length > 0 && localStorage.getItem('Login') == 'true' && url =='home') {
+            let home = new __WEBPACK_IMPORTED_MODULE_3__components_DashBoard_js__["a" /* default */]();
+                home.renderDashBoard();
         } else {
             let login = new __WEBPACK_IMPORTED_MODULE_0__components_LoginForm__["a" /* default */]();   
                 login.renderLogin();
