@@ -1,4 +1,4 @@
-// import { AUTH_SERVICE } from '../store/login.service';
+import {AUTH_SERVICE} from '../store/login.service.js';
 
 class RegistrationForm {
     constructor() {
@@ -29,10 +29,21 @@ class RegistrationForm {
 
         el.onclick = () => {
             const shop = document.querySelector('#select-shop').value;
-            const user = document.querySelector('#user').value;
+            const username = document.querySelector('#user').value;
+            const password = document.querySelector('#password').value;
+            const password_repeat = document.querySelector('#repeat_password').value;
             const email = document.querySelector('#email').value;
-            const repeat_password = document.querySelector('#repeat_password').value;
-            const store_password = document.querySelector('#store_password').value;
+            // const store_id = '8';
+            const store_password = document.querySelector('#store_password').value;            
+
+            // AUTH_SERVICE.registration({
+            //         username: username, 
+            //         password : password,
+            //         password_repeat : password_repeat,
+            //         email : email,
+            //         store_id : 8,
+            //         store_password : store_password 
+            //     });
 
             fetch('https://pizza-tele.ga/api/v1/user/create', {
                 method: 'post',
