@@ -1,23 +1,45 @@
 class AuthService {
     constructor(){
-        this._token = null;
-        this._claims = null;
+        this._token = localStorage.getItem('token');
+        this._claims = JSON.parse(localStorage.getItem('claims'));
     }
 
-    // get token(){
+    get token(){
+        return this._token;
+    }
+    set token(token){
+        this._token = token;
+        localStorage.setItem('token', token);
+    }
 
-    // }
-    // set token(){
+    get claims(){
+        return this._claims;
+    }
+    
+    set claims(claims){
+        this._claims = claims;
+        localStorage.setItem('claims', JSON.stringify(claims));
+    }
 
-    // }
+    clearStorage(){
+        this._token = null;
+        this._claims = null;
+        localStorage.removeItem('token');
+        localStorage.removeItem('claims');
+    }
 
-    // isAuthorized(){
+    isAuthorized(){
+        if( !this.tokenIsNotExpired() ){
+            this.clearStorage();
+            return false
+        }
+        return true;
+    }
 
-    // }
-
-    // tokenIsNotExpired(){
-
-    // }
+    tokenIsNotExpired(){
+        if(!this.token) return false;
+        return this.claims.exp * 1000 > Date.now();
+    }
 
     login(userData) {
         fetch('https://pizza-tele.ga/api/v1/user/login', {
@@ -30,7 +52,8 @@ class AuthService {
             }).then(res => res.json())
             .then( (res) => {
                 if (res.success == true) {
-                    localStorage.setItem('Login', 'true');
+                    this.token = res.token;
+                    this.claims = this.parseJwtClaims(res.token);
                     window.location.hash = 'home';
                 } else {
                     window.location.hash = 'login';
