@@ -82,7 +82,8 @@ class DashBoard {
     logOut() {
         let el = document.getElementById('log-out');
         el.onclick = () => {
-            localStorage.setItem('Login', 'false');
+            alert('logout');
+            localStorage.setItem('token', '');
         }
     }
 }

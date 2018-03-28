@@ -25,7 +25,15 @@ class LoginForm {
             const username = document.querySelector('#user').value;
             const password = document.querySelector('#password').value;
 
-            AUTH_SERVICE.login({username, password});
+            AUTH_SERVICE.login({username, password})
+                .then(
+                    result => {
+                        console.log(AUTH_SERVICE.token);
+                        console.log(AUTH_SERVICE.isAuthorized);
+                    },
+                    status => {
+                        console.log(status);
+                    });
         }
     }
 
