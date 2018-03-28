@@ -46,20 +46,20 @@ class AuthService {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(userData)
-            }).then(res => res.json());
+                }).then(res => res.json())
         //      then(res => {
         //     if(res.ok){
         //        console.log(res.json());
         //     }
         //     throw new Error('${res.status}')
         // });
-            // .then( (res) => {
-            //     if (res.success == true) {
-            //         window.location.hash = 'login';
-            //     } else {
-            //         window.location.hash = 'registration';
-            //     }                
-            // });
+                .then( (res) => {
+                    if (res.success == true) {
+                        window.location.hash = 'login';
+                    } else {
+                        window.location.hash = 'registration';
+                    }                
+                });
     }
 
     parseJwtClaims(jwtToken) {
