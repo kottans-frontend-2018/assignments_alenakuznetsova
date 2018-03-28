@@ -19,7 +19,7 @@ class Router {
 
             let json_data = new DataApi();
                 json_data.getObject();
-        } else if (window.location.hash.length > 0 && localStorage.getItem('Login') == 'true' && url =='home') {
+        } else if (window.location.hash.length > 0 && localStorage.getItem('token') && url =='home') {
             let home = new DashBoard();
                 home.renderDashBoard();
         } else {
