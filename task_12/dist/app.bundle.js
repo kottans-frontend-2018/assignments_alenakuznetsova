@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "5cb380e74dd233ebfa3a"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "ee28797f912a9ca2517f"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -735,7 +735,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "body{font-family:Helvetica Neue,Helvetica,Arial,sans-serif;margin:0;padding:0;font-size:16px}.container{width:100%;overflow:hidden}.header{display:inline-flex;justify-content:space-between;background-color:#1e1d26;width:100%;padding:1.875rem 0}.top-time{color:#f8f8f8;font-weight:900;align-self:center;padding-left:1.875rem}.top-right-info{align-self:center;padding-right:1.875rem}.login{text-transform:uppercase;background:transparent;color:#f8f8f8;font-weight:900;align-self:center;text-decoration:none;border:.0625rem solid #f8f8f8;padding:1.25rem 1.5625rem}.login:hover{color:green;border-color:green}.main{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));grid-gap:1.875rem;background-color:#f8f8f8;padding:1.875rem}.footer{display:flex;justify-content:space-between;width:100%;background-color:#1e1d26;padding:1.25rem 0;color:#f8f8f8}.left-info,.right-info{padding:0 1.875rem}.registration-form{width:20%;margin:auto;background:#1e1d26;padding:4.6875rem 6.25rem;text-align:center}.registration-form input{display:block;padding:.625rem .9375rem;margin:.9375rem auto;outline:1;box-sizing:border-box;width:100%}.btn-registration,.registration-form__title{color:#f8f8f8;text-transform:uppercase}.btn-registration{padding:.625rem 0;border:.5rem solid green;background:green;width:100%}.message{color:grey}", ""]);
+exports.push([module.i, "body {\n  font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  margin: 0;\n  padding: 0;\n  font-size: 16px;\n  background: #f8f8f8; }\n\n.container {\n  width: 100%;\n  overflow: hidden; }\n\n.header {\n  display: inline-flex;\n  justify-content: space-between;\n  background-color: #1e1d26;\n  width: 100%;\n  padding: 1.875rem 0; }\n\n.top-time {\n  color: #f8f8f8;\n  font-weight: 900;\n  align-self: center;\n  padding-left: 1.875rem; }\n\n.top-logo__img {\n  height: 6.25rem;\n  width: 6.25rem; }\n\n.top-right-info {\n  align-self: center;\n  padding-right: 1.875rem; }\n\n.login {\n  text-transform: uppercase;\n  background: transparent;\n  color: #f8f8f8;\n  font-weight: 900;\n  align-self: center;\n  text-decoration: none;\n  border: 0.0625rem solid #f8f8f8;\n  padding: 1.25rem 1.5625rem; }\n  .login:hover {\n    color: #43A047;\n    border-color: #43A047; }\n  .login::before {\n    display: none;\n    font-family: \"Font Awesome 5 Solid\";\n    content: \"\\F007\"; }\n\n.main {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n  grid-gap: 1.875rem;\n  padding: 1.875rem; }\n\n.footer {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n  background-color: #1e1d26;\n  height: 4.375rem;\n  color: #f8f8f8; }\n\n.left-info,\n.right-info {\n  padding: 0 1.875rem; }\n\n.btn-add {\n  color: #1e1d26;\n  border: 0.0625rem solid #1e1d26;\n  text-transform: uppercase;\n  background: #EEEEEE;\n  width: 100%;\n  border-radius: 0.25rem; }\n  .btn-add:hover {\n    box-shadow: 0.0625rem 0rem 0.625rem 0.3125rem rgba(0, 0, 0, 0.2); }\n\n.pizza-container {\n  background-color: #f8f8f8;\n  border: 0.0625rem solid #1e1d26;\n  border-radius: 0.25rem; }\n\n.pizza-img {\n  overflow: hidden;\n  text-align: center; }\n\n.img {\n  max-height: 15.625rem;\n  margin: 1.25rem auto; }\n\n.pizza-order-info {\n  background-color: #43A047;\n  color: #f8f8f8; }\n\n.pizza-order-info__left,\n.pizza-order-info__right {\n  display: flex;\n  justify-content: space-between;\n  padding: 0.625rem 1.25rem; }\n\n.registration-form,\n.login-form {\n  width: 20%;\n  margin: auto;\n  background: #1e1d26;\n  padding: 4.6875rem 6.25rem;\n  text-align: center; }\n  .registration-form input, .registration-form select,\n  .login-form input,\n  .login-form select {\n    display: block;\n    padding: 0.625rem 0.9375rem;\n    margin: 0.9375rem auto;\n    outline: 1;\n    box-sizing: border-box;\n    width: 100%; }\n\n.registration-form__title {\n  color: #f8f8f8;\n  text-transform: uppercase; }\n\n.btn-registration,\n.btn-login {\n  padding: 0.625rem 0;\n  color: #f8f8f8;\n  border: 0.5rem solid #43A047;\n  text-transform: uppercase;\n  background: #43A047;\n  width: 100%;\n  font-weight: bold; }\n\n.message {\n  color: #BDBDBD; }\n", ""]);
 
 // exports
 
@@ -1311,62 +1311,17 @@ module.exports = function (css) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_scss__ = __webpack_require__("./src/app.scss");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__app_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_Router__ = __webpack_require__("./src/utils/Router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_time_js__ = __webpack_require__("./src/components/time.js");
 
 
-window.addEventListener('hashchange', () => {  
-  hashChanged();  
-})
 
-function hashChanged() {
-    let url = window.location.hash.slice(1);
-        console.log(url);
 
-    if (window.location.hash.length > 0  && url =='login'){
-        renderLogin();
-    } else {
-        renderRegistration();
-    }
-}
+const router = new __WEBPACK_IMPORTED_MODULE_1__utils_Router__["a" /* default */]();
+const time = new __WEBPACK_IMPORTED_MODULE_2__components_time_js__["a" /* default */]();
 
-function renderLogin() {
-    document.getElementById('main-container').innerHTML = 
-        `<form class="registration-form">
-            <span class="registration-form__title">login</span>
-            <input type="text" placeholder="login">
-            <input type="text" placeholder="password">
-            <button class="btn-registration">login</button>
-            <p class="message">You don't registrate?<a href="#registration">&nbsp;Registration</a></p>
-        </form>`
-}
-
-function renderRegistration() {
-    document.getElementById('main-container').innerHTML = 
-        `<form class="registration-form">
-            <span class="registration-form__title">registration</span>
-            <input type="text" placeholder="Name">
-            <input type="text" placeholder="login">
-            <input type="text" placeholder="password">
-            <button class="btn-registration">registration</button>
-            <p class="message">Already registered?<a href="#login">&nbsp;Login</a></p>
-        </form>`
-}
-
-function renderHome() {
-    document.getElementById('main-container').innerHTML = 
-        `<div class="pizza-container">
-            <div class="pizza-img">
-                <img class="img" src="images/pizza-PomoLivo.png">
-            </div>
-            <div class="pizza-order-info">
-                <div class="div1">
-                    <span>xx</span><span>xx</span>
-                </div>
-                <div class="div2">
-                    <span>xx</span><span>xx</span>
-                </div>
-            </div>
-        </div>`
-}
+window.onload = time.render ();
+window.onload = router.hashChanged();
 
 /***/ }),
 
@@ -1418,6 +1373,431 @@ if(true) {
 
 	module.hot.dispose(function() { update(); });
 }
+
+/***/ }),
+
+/***/ "./src/components/DashBoard.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+class DashBoard {
+    renderDashBoard() {
+        document.getElementById('log-info').innerHTML = 
+        `<a href="#login" class="login" id="log-out">
+            <i aria-hidden="true" class="fas fa-user"></i>&nbsp;&nbsp;log out          
+        </a>`;
+
+        const url = __webpack_require__("./src/images/pizza-PomoLivo.png");
+
+        document.getElementById('main-container').innerHTML = 
+        `<div class="pizza-container">
+            <div class="pizza-img">
+                <img class="img" src="${url}">
+            </div>
+            <div class="pizza-order-info">
+                <div class="pizza-order-info__left">
+                    <span>xx</span><span>xx</span>
+                </div>
+                <div class="pizza-order-info__right">
+                    <span>xx</span><span>xx</span>
+                </div>
+            </div>
+        </div>
+        <div class="pizza-container">
+            <div class="pizza-img">
+                <img class="img" src="${url}">
+            </div>
+            <div class="pizza-order-info">
+                <div class="pizza-order-info__left">
+                    <span>xx</span><span>xx</span>
+                </div>
+                <div class="pizza-order-info__right">
+                    <span>xx</span><span>xx</span>
+                </div>
+            </div>
+        </div>
+        <div class="pizza-container">
+            <div class="pizza-img">
+                <img class="img" src="${url}">
+            </div>
+            <div class="pizza-order-info">
+                <div class="pizza-order-info__left">
+                    <span>xx</span><span>xx</span>
+                </div>
+                <div class="pizza-order-info__right">
+                    <span>xx</span><span>xx</span>
+                </div>
+            </div>
+        </div>
+        <div class="pizza-container">
+            <div class="pizza-img">
+                <img class="img" src="${url}">
+            </div>
+            <div class="pizza-order-info">
+                <div class="pizza-order-info__left">
+                    <span>xx</span><span>xx</span>
+                </div>
+                <div class="pizza-order-info__right">
+                    <span>xx</span><span>xx</span>
+                </div>
+            </div>
+        </div>
+         <div class="pizza-container">
+            <div class="pizza-img">
+                <img class="img" src="${url}">
+            </div>
+            <div class="pizza-order-info">
+                <div class="pizza-order-info__left">
+                    <span>xx</span><span>xx</span>
+                </div>
+                <div class="pizza-order-info__right">
+                    <span>xx</span><span>xx</span>
+                </div>
+            </div>
+        </div>
+        <button id='btn-add' class='btn-add' type='button'>+ Add new pizza</button>`;
+    }
+
+    logOut() {
+        let el = document.getElementById('log-out');
+        el.onclick = () => {
+            alert('logout');
+            localStorage.setItem('token', '');
+        }
+    }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (DashBoard);
+
+/***/ }),
+
+/***/ "./src/components/LoginForm.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_login_service_js__ = __webpack_require__("./src/store/login.service.js");
+
+
+class LoginForm {
+    constructor() {
+    }
+
+    renderLogin() {
+        document.getElementById('log-info').innerHTML = 
+        `<a href="#login" class="login">
+            <i aria-hidden="true" class="fas fa-user"></i>&nbsp;&nbsp;login            
+        </a>`;
+
+        document.getElementById('main-container').innerHTML = 
+        `<form class='login-form'>
+            <span class='registration-form__title'>login</span>
+            <input id='user' type='text' placeholder='login'>
+            <input id='password' type='password' placeholder='password'>
+            <p class='error-text' id='error-text'></p>
+            <button id='btn-login' class='btn-login'  type='button'>login</button>
+            <p class='message'>Already registered?&nbsp;<a href='#registration'>Registration</a></p>
+        </form>`;
+
+        let el = document.getElementById('btn-login');
+
+        el.onclick = () => {
+            const username = document.querySelector('#user').value;
+            const password = document.querySelector('#password').value;
+
+            __WEBPACK_IMPORTED_MODULE_0__store_login_service_js__["a" /* AUTH_SERVICE */].login({username, password})
+                .then(
+                    result => {
+                        console.log(__WEBPACK_IMPORTED_MODULE_0__store_login_service_js__["a" /* AUTH_SERVICE */].token);
+                        console.log(__WEBPACK_IMPORTED_MODULE_0__store_login_service_js__["a" /* AUTH_SERVICE */].isAuthorized());
+                    },
+                    data => {
+                        console.log(data);
+                        if(data.code == 400){
+                            document.getElementById('error-text').textContent = data.answer.error;
+                        }
+                    });
+        }
+    }
+
+
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (LoginForm);
+
+/***/ }),
+
+/***/ "./src/components/RegistrationForm.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_login_service_js__ = __webpack_require__("./src/store/login.service.js");
+
+
+class RegistrationForm {
+    constructor() {
+    }
+
+    renderRegistration() {
+        document.getElementById('log-info').innerHTML = 
+        `<a href="#login" class="login">
+            <i aria-hidden="true" class="fas fa-user"></i>&nbsp;&nbsp;login            
+        </a>`;
+        
+        document.getElementById('main-container').innerHTML = 
+            `<form class='registration-form'>
+                <span class='registration-form__title'>registration</span>
+                <select id='select-shop'>
+                    <option value=' '>Select pizza shop</option>;
+                </select>
+                <input id='user' type='text' placeholder='User name'>
+                <input id='email' type='email' placeholder='email'>                
+                <input id='password' type='password' placeholder='password'>
+                <input id='repeat_password' type='password' placeholder='repeat password'>
+                <input id='store_password' type='password' placeholder='Store password'>
+                <button id='btn-registration' class='btn-registration' type='button'>registration</button>
+                <p class='message'>Haven't registered yet?&nbsp;<a href='#login'>Login</a></p>
+            </form>`;
+
+            var el = document.getElementById('btn-registration');
+
+        el.onclick = () => {
+            const shop = document.querySelector('#select-shop').value;
+            const username = document.querySelector('#user').value;
+            const password = document.querySelector('#password').value;
+            const password_repeat = document.querySelector('#repeat_password').value;
+            const email = document.querySelector('#email').value;
+            const store_id = 9;
+            const store_password = document.querySelector('#store_password').value;            
+
+            __WEBPACK_IMPORTED_MODULE_0__store_login_service_js__["a" /* AUTH_SERVICE */].registration({username, password, password_repeat, email, store_id, store_password});
+        }
+    }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (RegistrationForm);
+
+/***/ }),
+
+/***/ "./src/components/time.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+class Time {
+    getDate() {
+        let d = new Date();
+        let time = d.toLocaleTimeString();
+
+        document.getElementById('time').innerHTML = time;        
+    }
+
+    render () {
+        setInterval(this.getDate, 0);
+    }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (Time);
+
+
+
+
+/***/ }),
+
+/***/ "./src/images/pizza-PomoLivo.png":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "images/pizza-PomoLivo.png";
+
+/***/ }),
+
+/***/ "./src/store/login.service.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+class AuthService {
+    constructor(){
+        this._token = localStorage.getItem('token');
+        this._claims = JSON.parse(localStorage.getItem('claims'));
+    }
+
+    get token(){
+        return this._token;
+    }
+    set token(token){
+        this._token = token;
+        localStorage.setItem('token', token);
+    }
+
+    get claims(){
+        return this._claims;
+    }
+    
+    set claims(claims){
+        this._claims = claims;
+        localStorage.setItem('claims', JSON.stringify(claims));
+    }
+
+    clearStorage(){
+        this._token = null;
+        this._claims = null;
+        localStorage.removeItem('token');
+        localStorage.removeItem('claims');
+    }
+
+    isAuthorized(){
+        if( !this.tokenIsNotExpired() ){
+            this.clearStorage();
+            return false;
+        }
+        return true;
+    }
+
+    tokenIsNotExpired(){
+        if(!this.token) return false;
+        return this.claims.exp * 1000 > Date.now();
+    }
+
+    login(userData) {
+        return fetch('https://pizza-tele.ga/api/v1/user/login', {
+            method: 'post',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+            })
+            .then( res => {
+                if (res.ok){
+                    return res.json().then(answer => {
+                        this.token = answer.token;
+                        this.claims = this.parseJwtClaims(answer.token);
+                        window.location.hash = 'home';
+                        // return res.json().then(answer => Promise.resolve({answer, status: res.status}));
+                    })
+                } else {
+                    window.location.hash = 'login';
+                    res.status;
+                    return res.json().then(answer => Promise.reject({answer, status: res.status}));
+                }                
+            });
+    }
+
+    registration(userData) {
+        fetch('https://pizza-tele.ga/api/v1/user/create', {
+                method: 'post',
+                headers: {
+                    'Accept': 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userData)
+                }).then(res => res.json())
+                .then( (res) => {
+                    if (res.success == true) {
+                        window.location.hash = 'login';
+                    } else {
+                        window.location.hash = 'registration';
+                    }                
+                });
+    }
+
+    parseJwtClaims(jwtToken) {
+        if (jwtToken) {
+            let base64Url = jwtToken.split('.')[1]
+            let base64 = base64Url.replace('-', '+').replace('_', '/')
+            return JSON.parse(window.atob(base64))
+        }
+        return {}
+    }
+}
+
+const AUTH_SERVICE = new AuthService();
+/* harmony export (immutable) */ __webpack_exports__["a"] = AUTH_SERVICE;
+
+
+/***/ }),
+
+/***/ "./src/utils/DataApi.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+class DataApi {
+    constructor () {
+
+    }    
+
+    getObject( ) {
+        function status(response) {  
+            if (response.status >= 200 && response.status < 300) {  
+                return Promise.resolve(response);
+            } else {  
+                return Promise.reject(new Error(response.statusText));  
+            }  
+        }
+
+        function json(response) {  
+            return response.json();
+        }    
+
+        function printList(a) {
+            for (var i = 0; i<a.length; i++) {
+                document.getElementById('select-shop').innerHTML +=
+                    '<option value="'+ a[i].name +'">' + a[i].name + '</option>';
+            }
+        }
+
+        fetch( 'https://pizza-tele.ga/api/v1/store/list' )  
+            .then(status)  
+            .then(json)
+            .then( (obj) => { 
+                printList(obj); 
+            });  
+    }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (DataApi);
+
+/***/ }),
+
+/***/ "./src/utils/Router.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_LoginForm__ = __webpack_require__("./src/components/LoginForm.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_RegistrationForm__ = __webpack_require__("./src/components/RegistrationForm.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_DataApi_js__ = __webpack_require__("./src/utils/DataApi.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_DashBoard_js__ = __webpack_require__("./src/components/DashBoard.js");
+
+
+
+
+
+class Router {    
+    constructor () {  
+        window.location.hash = 'login';
+        window.addEventListener('hashchange', () => {  
+            this.hashChanged();  
+        }); 
+    }
+
+    hashChanged() {  
+        let url = window.location.hash.slice(1);
+        if (window.location.hash.length > 0  && url =='registration') {
+            let reg = new __WEBPACK_IMPORTED_MODULE_1__components_RegistrationForm__["a" /* default */]();
+                reg.renderRegistration();
+
+            let json_data = new __WEBPACK_IMPORTED_MODULE_2__utils_DataApi_js__["a" /* default */]();
+                json_data.getObject();
+        } else if (window.location.hash.length > 0 && localStorage.getItem('token') && url =='home') {
+            let home = new __WEBPACK_IMPORTED_MODULE_3__components_DashBoard_js__["a" /* default */]();
+                home.renderDashBoard();
+        } else {
+            let login = new __WEBPACK_IMPORTED_MODULE_0__components_LoginForm__["a" /* default */]();   
+                login.renderLogin();
+        }
+    }   
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (Router);
+
 
 /***/ })
 
