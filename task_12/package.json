@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server",
-    "prod": "npm run clean && webpack -p",
-    "clean": "rimraf ./dist/*"
+    "prod": "npm run clean && webpack",
+    "clean": "rimraf dist",
+    "push-gh-pages": "push-dir --dir=dist --branch=gh-pages --cleanup --verbose"
   },
   "author": "",
   "license": "ISC",
@@ -26,6 +27,8 @@
     "webpack-dev-server": "^2.11.1"
   },
   "dependencies": {
-    "normalize.css": "^7.0.0"
+    "node": "^8.11.1",
+    "normalize.css": "^7.0.0",
+    "push-dir": "^0.4.1"
   }
 }
