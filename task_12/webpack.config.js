@@ -46,7 +46,6 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'Template',
             template: './src/index.pug',
-            disable: true
         }),
         new ExtractTextPlugin('style.css'),
         new webpack.HotModuleReplacementPlugin(),
