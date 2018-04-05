@@ -15,6 +15,7 @@ class LoginForm {
             <span class='registration-form__title'>login</span>
             <input id='user' type='text' placeholder='login'>
             <input id='password' type='password' placeholder='password'>
+            <p class='error-text' id='error-text'></p>
             <button id='btn-login' class='btn-login'  type='button'>login</button>
             <p class='message'>Already registered?&nbsp;<a href='#registration'>Registration</a></p>
         </form>`;
@@ -29,10 +30,13 @@ class LoginForm {
                 .then(
                     result => {
                         console.log(AUTH_SERVICE.token);
-                        console.log(AUTH_SERVICE.isAuthorized);
+                        console.log(AUTH_SERVICE.isAuthorized());
                     },
-                    status => {
-                        console.log(status);
+                    data => {
+                        console.log(data);
+                        if(data.code == 400){
+                            document.getElementById('error-text').textContent = data.answer.error;
+                        }
                     });
         }
     }

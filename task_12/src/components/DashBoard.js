@@ -1,7 +1,4 @@
 class DashBoard {
-    constructor() {
-    }
-
     renderDashBoard() {
         document.getElementById('log-info').innerHTML = 
         `<a href="#login" class="login" id="log-out">

@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "cd903792bd7a1e54334b"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "ee28797f912a9ca2517f"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -735,7 +735,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "body{font-family:Helvetica Neue,Helvetica,Arial,sans-serif;margin:0;padding:0;font-size:16px;background:#f8f8f8}.container{width:100%;overflow:hidden}.header{display:inline-flex;justify-content:space-between;background-color:#1e1d26;width:100%;padding:1.875rem 0}.top-time{color:#f8f8f8;font-weight:900;align-self:center;padding-left:1.875rem}.top-logo__img{height:6.25rem;width:6.25rem}.top-right-info{align-self:center;padding-right:1.875rem}.login{text-transform:uppercase;background:transparent;color:#f8f8f8;font-weight:900;align-self:center;text-decoration:none;border:.0625rem solid #f8f8f8;padding:1.25rem 1.5625rem}.login:hover{color:#43a047;border-color:#43a047}.login:before{display:none;font-family:Font Awesome\\ 5 Solid;content:\"\\F007\"}.main{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));grid-gap:1.875rem;padding:1.875rem}.footer{display:flex;justify-content:space-between;width:100%;background-color:#1e1d26;height:4.375rem;color:#f8f8f8}.left-info,.right-info{padding:0 1.875rem}.btn-add{color:#1e1d26;border:.0625rem solid #1e1d26;text-transform:uppercase;background:#eee;width:100%;border-radius:.25rem}.btn-add:hover{box-shadow:.0625rem 0 .625rem .3125rem rgba(0,0,0,.2)}.pizza-container{background-color:#f8f8f8;border:.0625rem solid #1e1d26;border-radius:.25rem}.pizza-img{overflow:hidden;text-align:center}.img{max-height:15.625rem;margin:1.25rem auto}.pizza-order-info{background-color:#43a047;color:#f8f8f8}.pizza-order-info__left,.pizza-order-info__right{display:flex;justify-content:space-between;padding:.625rem 1.25rem}.login-form,.registration-form{width:20%;margin:auto;background:#1e1d26;padding:4.6875rem 6.25rem;text-align:center}.login-form input,.login-form select,.registration-form input,.registration-form select{display:block;padding:.625rem .9375rem;margin:.9375rem auto;outline:1;box-sizing:border-box;width:100%}.btn-login,.btn-registration,.registration-form__title{color:#f8f8f8;text-transform:uppercase}.btn-login,.btn-registration{padding:.625rem 0;border:.5rem solid #43a047;background:#43a047;width:100%;font-weight:700}.message{color:#bdbdbd}", ""]);
+exports.push([module.i, "body {\n  font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  margin: 0;\n  padding: 0;\n  font-size: 16px;\n  background: #f8f8f8; }\n\n.container {\n  width: 100%;\n  overflow: hidden; }\n\n.header {\n  display: inline-flex;\n  justify-content: space-between;\n  background-color: #1e1d26;\n  width: 100%;\n  padding: 1.875rem 0; }\n\n.top-time {\n  color: #f8f8f8;\n  font-weight: 900;\n  align-self: center;\n  padding-left: 1.875rem; }\n\n.top-logo__img {\n  height: 6.25rem;\n  width: 6.25rem; }\n\n.top-right-info {\n  align-self: center;\n  padding-right: 1.875rem; }\n\n.login {\n  text-transform: uppercase;\n  background: transparent;\n  color: #f8f8f8;\n  font-weight: 900;\n  align-self: center;\n  text-decoration: none;\n  border: 0.0625rem solid #f8f8f8;\n  padding: 1.25rem 1.5625rem; }\n  .login:hover {\n    color: #43A047;\n    border-color: #43A047; }\n  .login::before {\n    display: none;\n    font-family: \"Font Awesome 5 Solid\";\n    content: \"\\F007\"; }\n\n.main {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n  grid-gap: 1.875rem;\n  padding: 1.875rem; }\n\n.footer {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n  background-color: #1e1d26;\n  height: 4.375rem;\n  color: #f8f8f8; }\n\n.left-info,\n.right-info {\n  padding: 0 1.875rem; }\n\n.btn-add {\n  color: #1e1d26;\n  border: 0.0625rem solid #1e1d26;\n  text-transform: uppercase;\n  background: #EEEEEE;\n  width: 100%;\n  border-radius: 0.25rem; }\n  .btn-add:hover {\n    box-shadow: 0.0625rem 0rem 0.625rem 0.3125rem rgba(0, 0, 0, 0.2); }\n\n.pizza-container {\n  background-color: #f8f8f8;\n  border: 0.0625rem solid #1e1d26;\n  border-radius: 0.25rem; }\n\n.pizza-img {\n  overflow: hidden;\n  text-align: center; }\n\n.img {\n  max-height: 15.625rem;\n  margin: 1.25rem auto; }\n\n.pizza-order-info {\n  background-color: #43A047;\n  color: #f8f8f8; }\n\n.pizza-order-info__left,\n.pizza-order-info__right {\n  display: flex;\n  justify-content: space-between;\n  padding: 0.625rem 1.25rem; }\n\n.registration-form,\n.login-form {\n  width: 20%;\n  margin: auto;\n  background: #1e1d26;\n  padding: 4.6875rem 6.25rem;\n  text-align: center; }\n  .registration-form input, .registration-form select,\n  .login-form input,\n  .login-form select {\n    display: block;\n    padding: 0.625rem 0.9375rem;\n    margin: 0.9375rem auto;\n    outline: 1;\n    box-sizing: border-box;\n    width: 100%; }\n\n.registration-form__title {\n  color: #f8f8f8;\n  text-transform: uppercase; }\n\n.btn-registration,\n.btn-login {\n  padding: 0.625rem 0;\n  color: #f8f8f8;\n  border: 0.5rem solid #43A047;\n  text-transform: uppercase;\n  background: #43A047;\n  width: 100%;\n  font-weight: bold; }\n\n.message {\n  color: #BDBDBD; }\n", ""]);
 
 // exports
 
@@ -1381,9 +1381,6 @@ if(true) {
 
 "use strict";
 class DashBoard {
-    constructor() {
-    }
-
     renderDashBoard() {
         document.getElementById('log-info').innerHTML = 
         `<a href="#login" class="login" id="log-out">
@@ -1464,7 +1461,8 @@ class DashBoard {
     logOut() {
         let el = document.getElementById('log-out');
         el.onclick = () => {
-            localStorage.setItem('Login', 'false');
+            alert('logout');
+            localStorage.setItem('token', '');
         }
     }
 }
@@ -1477,6 +1475,9 @@ class DashBoard {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_login_service_js__ = __webpack_require__("./src/store/login.service.js");
+
+
 class LoginForm {
     constructor() {
     }
@@ -1492,6 +1493,7 @@ class LoginForm {
             <span class='registration-form__title'>login</span>
             <input id='user' type='text' placeholder='login'>
             <input id='password' type='password' placeholder='password'>
+            <p class='error-text' id='error-text'></p>
             <button id='btn-login' class='btn-login'  type='button'>login</button>
             <p class='message'>Already registered?&nbsp;<a href='#registration'>Registration</a></p>
         </form>`;
@@ -1499,28 +1501,21 @@ class LoginForm {
         let el = document.getElementById('btn-login');
 
         el.onclick = () => {
-            const user = document.querySelector('#user').value;
+            const username = document.querySelector('#user').value;
             const password = document.querySelector('#password').value;
-            
-            fetch('https://pizza-tele.ga/api/v1/user/login', {
-                method: 'post',
-                headers: {
-                    'Accept': 'application/json, text/plain, */*',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ 
-                    username : user , 
-                    password : password 
-                })
-            }).then(res => res.json())
-            .then( (res) => {
-                if (res.success == true) {
-                    localStorage.setItem('Login', 'true');
-                    window.location.hash = 'home';
-                } else {
-                    window.location.hash = 'login';
-                }                
-            });
+
+            __WEBPACK_IMPORTED_MODULE_0__store_login_service_js__["a" /* AUTH_SERVICE */].login({username, password})
+                .then(
+                    result => {
+                        console.log(__WEBPACK_IMPORTED_MODULE_0__store_login_service_js__["a" /* AUTH_SERVICE */].token);
+                        console.log(__WEBPACK_IMPORTED_MODULE_0__store_login_service_js__["a" /* AUTH_SERVICE */].isAuthorized());
+                    },
+                    data => {
+                        console.log(data);
+                        if(data.code == 400){
+                            document.getElementById('error-text').textContent = data.answer.error;
+                        }
+                    });
         }
     }
 
@@ -1535,7 +1530,8 @@ class LoginForm {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-// import { AUTH_SERVICE } from '../store/login.service';
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_login_service_js__ = __webpack_require__("./src/store/login.service.js");
+
 
 class RegistrationForm {
     constructor() {
@@ -1566,33 +1562,14 @@ class RegistrationForm {
 
         el.onclick = () => {
             const shop = document.querySelector('#select-shop').value;
-            const user = document.querySelector('#user').value;
+            const username = document.querySelector('#user').value;
+            const password = document.querySelector('#password').value;
+            const password_repeat = document.querySelector('#repeat_password').value;
             const email = document.querySelector('#email').value;
-            const repeat_password = document.querySelector('#repeat_password').value;
-            const store_password = document.querySelector('#store_password').value;
+            const store_id = 9;
+            const store_password = document.querySelector('#store_password').value;            
 
-            fetch('https://pizza-tele.ga/api/v1/user/create', {
-                method: 'post',
-                headers: {
-                    'Accept': 'application/json, text/plain, */*',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    username: user, 
-                    password : password,
-                    password_repeat : repeat_password,
-                    email : email,
-                    store_id : 8,
-                    store_password : store_password 
-                })
-            }).then(res => res.json())
-            .then( (res) => {
-                if (res.success == true) {
-                    window.location.hash = 'login';
-                } else {
-                    window.location.hash = 'registration';
-                }                
-            });
+            __WEBPACK_IMPORTED_MODULE_0__store_login_service_js__["a" /* AUTH_SERVICE */].registration({username, password, password_repeat, email, store_id, store_password});
         }
     }
 }
@@ -1629,6 +1606,112 @@ class Time {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "images/pizza-PomoLivo.png";
+
+/***/ }),
+
+/***/ "./src/store/login.service.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+class AuthService {
+    constructor(){
+        this._token = localStorage.getItem('token');
+        this._claims = JSON.parse(localStorage.getItem('claims'));
+    }
+
+    get token(){
+        return this._token;
+    }
+    set token(token){
+        this._token = token;
+        localStorage.setItem('token', token);
+    }
+
+    get claims(){
+        return this._claims;
+    }
+    
+    set claims(claims){
+        this._claims = claims;
+        localStorage.setItem('claims', JSON.stringify(claims));
+    }
+
+    clearStorage(){
+        this._token = null;
+        this._claims = null;
+        localStorage.removeItem('token');
+        localStorage.removeItem('claims');
+    }
+
+    isAuthorized(){
+        if( !this.tokenIsNotExpired() ){
+            this.clearStorage();
+            return false;
+        }
+        return true;
+    }
+
+    tokenIsNotExpired(){
+        if(!this.token) return false;
+        return this.claims.exp * 1000 > Date.now();
+    }
+
+    login(userData) {
+        return fetch('https://pizza-tele.ga/api/v1/user/login', {
+            method: 'post',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+            })
+            .then( res => {
+                if (res.ok){
+                    return res.json().then(answer => {
+                        this.token = answer.token;
+                        this.claims = this.parseJwtClaims(answer.token);
+                        window.location.hash = 'home';
+                        // return res.json().then(answer => Promise.resolve({answer, status: res.status}));
+                    })
+                } else {
+                    window.location.hash = 'login';
+                    res.status;
+                    return res.json().then(answer => Promise.reject({answer, status: res.status}));
+                }                
+            });
+    }
+
+    registration(userData) {
+        fetch('https://pizza-tele.ga/api/v1/user/create', {
+                method: 'post',
+                headers: {
+                    'Accept': 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userData)
+                }).then(res => res.json())
+                .then( (res) => {
+                    if (res.success == true) {
+                        window.location.hash = 'login';
+                    } else {
+                        window.location.hash = 'registration';
+                    }                
+                });
+    }
+
+    parseJwtClaims(jwtToken) {
+        if (jwtToken) {
+            let base64Url = jwtToken.split('.')[1]
+            let base64 = base64Url.replace('-', '+').replace('_', '/')
+            return JSON.parse(window.atob(base64))
+        }
+        return {}
+    }
+}
+
+const AUTH_SERVICE = new AuthService();
+/* harmony export (immutable) */ __webpack_exports__["a"] = AUTH_SERVICE;
+
 
 /***/ }),
 
@@ -1703,7 +1786,7 @@ class Router {
 
             let json_data = new __WEBPACK_IMPORTED_MODULE_2__utils_DataApi_js__["a" /* default */]();
                 json_data.getObject();
-        } else if (window.location.hash.length > 0 && localStorage.getItem('Login') == 'true' && url =='home') {
+        } else if (window.location.hash.length > 0 && localStorage.getItem('token') && url =='home') {
             let home = new __WEBPACK_IMPORTED_MODULE_3__components_DashBoard_js__["a" /* default */]();
                 home.renderDashBoard();
         } else {

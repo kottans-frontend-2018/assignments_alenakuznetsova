@@ -31,7 +31,7 @@ class AuthService {
     isAuthorized(){
         if( !this.tokenIsNotExpired() ){
             this.clearStorage();
-            return false
+            return false;
         }
         return true;
     }
@@ -42,21 +42,26 @@ class AuthService {
     }
 
     login(userData) {
-        fetch('https://pizza-tele.ga/api/v1/user/login', {
+        return fetch('https://pizza-tele.ga/api/v1/user/login', {
             method: 'post',
             headers: {
                 'Accept': 'application/json, text/plain, */*',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(userData)
-            }).then(res => res.json())
-            .then( (res) => {
-                if (res.success == true) {
-                    this.token = res.token;
-                    this.claims = this.parseJwtClaims(res.token);
-                    window.location.hash = 'home';
+            })
+            .then( res => {
+                if (res.ok){
+                    return res.json().then(answer => {
+                        this.token = answer.token;
+                        this.claims = this.parseJwtClaims(answer.token);
+                        window.location.hash = 'home';
+                        // return res.json().then(answer => Promise.resolve({answer, status: res.status}));
+                    })
                 } else {
                     window.location.hash = 'login';
+                    res.status;
+                    return res.json().then(answer => Promise.reject({answer, status: res.status}));
                 }                
             });
     }
@@ -70,12 +75,6 @@ class AuthService {
                 },
                 body: JSON.stringify(userData)
                 }).then(res => res.json())
-        //      then(res => {
-        //     if(res.ok){
-        //        console.log(res.json());
-        //     }
-        //     throw new Error('${res.status}')
-        // });
                 .then( (res) => {
                     if (res.success == true) {
                         window.location.hash = 'login';
