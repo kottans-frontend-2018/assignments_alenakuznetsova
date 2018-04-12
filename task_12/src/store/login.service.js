@@ -36,9 +36,8 @@ class AuthService {
         return true;
     }
 
-    tokenIsNotExpired(){
-        if(!this.token) return false;
-        return this.claims.exp * 1000 > Date.now();
+    tokenIsNotExpired() { 
+        return this.token && this.claims.exp * 1000 > Date.now(); 
     }
 
     login(userData) {
